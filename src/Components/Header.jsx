@@ -14,9 +14,9 @@ const Header = () => {
           <button onClick={() => setIsOpen(!isOpen)} className="h-11 w-11 ">
             {isOpen ? <IoChatbubbleEllipsesOutline size={30} /> : <FiSidebar size={30}/>}
           </button>
+          <span> Chat Gpt</span>
         </div>
 
-        <FaRocketchat />
       </aside>
     </main>
   );
