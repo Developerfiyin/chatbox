@@ -3,7 +3,8 @@
   display: flex;
   cursor: pointer; 
   position: relative;
-  gap: 8;
+  text-align: center;
+  align-items: center;
   width: 24px; /* Adjusted size as needed */
   height: 24px; /* Adjusted size as needed */
 }
