@@ -20,18 +20,26 @@ const Header = () => {
           className="flex items-center h-20 "
         >
           <button className="icon-container ">
-            <IoChatbubbleEllipsesOutline size={30} className="icon-default" />
+            <IoChatbubbleEllipsesOutline  className="icon-default" />
             <FiSidebar size={30} className="icon-hover" />
           </button>
           <button
-            className={`ml-auto transition-opacity ${expanded ? "opacity-80" : "opacity-0 hidden"}`}
+            className={`ml-auto transition-opacity ${expanded ? "opacity-90" : "opacity-0 hidden"}`}
           >
             <FiSidebar size={30} />
           </button>
         </div>
 
-        <nav className="flex-1 ">
-          <NavItem icon={<LuNotebookPen />} />
+        <nav className="flex-1 px-3 space-y-2 mt-4">
+          <NavItem 
+          icon={<LuNotebookPen />}
+          label="New Chat"
+          active 
+          expanded={expanded}
+          />
+
+
+
         </nav>
       </aside>
     </main>
@@ -41,11 +49,13 @@ const Header = () => {
 function NavItem({ icon, label, active, expanded }) {
   return (
     <button
-      className={`w-full flex items-center p-3.5 rounded-2xl transition-all ${active ? "bg-indigo-100 text-purple-100 " : "text-purple-200: bg-indigo-50"} `}
+      className={`w-full flex items-center p-3.5 rounded-2xl transition-all ${active ? "text-purple-100 " : "text-purple-200 bg-indigo-50"}`}
     >
       <span className={`text-2xl ${!expanded && "mx-auto"}`}>{icon}</span>
+
+      <span className={`ml-4 overflow-hidden text-nowrap transition-all ${expanded ? "w-auto opacity-90" : "w-0 opacity-0"}`}>{label}</span>
     </button>
-  );
+  )
 }
 
 export default Header;
