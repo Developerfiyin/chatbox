@@ -11,17 +11,22 @@ const Header = () => {
   return (
     <main className="flex h-screen overflow-hidden bg-indigo-100 ">
       <aside
-        className={`bg-purple-500 flex h-screen px-6  ${expanded ? "w-96" : "w-24"} `}
+        className={`bg-purple-300 flex flex-col  border-indigo-400 border-l px-6  ${expanded ? "w-96" : "w-20"} `}
       >
-        <div onClick={() => setExpanded(!expanded)} className="flex gap-6 ">
+        <div onClick={() => setExpanded(!expanded)} className="flex items-center h-20 ">
           <button className="icon-container ">
             <IoChatbubbleEllipsesOutline size={30} className="icon-default" />
             <FiSidebar size={30} className="icon-hover" />
           </button>
-          <button>
-            <FiSidebar/>
+          <button className={`ml-auto transition-opacity ${expanded ? "opacity-80" : "opacity-0 hidden" }`} >
+            <FiSidebar size={30}/>
           </button>
         </div>
+
+        <nav>
+
+        </nav>
+        
       </aside>
     </main>
   );
