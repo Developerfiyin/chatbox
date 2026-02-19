@@ -63,24 +63,19 @@ const Header = () => {
             active
             expanded={expanded}
           />
- <NavItem
-            icon={ <TbCircleChevronRight />
-  }
+          <NavItem
+            icon={<TbCircleChevronRight />}
             label="Codex"
             active
             expanded={expanded}
           />
 
-
-
           <NavItem
-            icon={<BsFolderPlus/> }
+            icon={<BsFolderPlus />}
             label="Projects"
             active
             expanded={expanded}
           />
-
-
         </nav>
       </aside>
     </main>
