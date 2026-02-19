@@ -16,7 +16,7 @@ const Header = () => {
   const [expanded, setExpanded] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <main className="flex h-screen overflow-hidden bg-indigo-100 ">
+    <section className="flex h-screen overflow-hidden bg-indigo-100 ">
       <aside
         className={`bg-purple-300 flex flex-col  border-indigo-400 border-l text-center ${expanded ? "w-65" : "w-13"} `}
       >
@@ -78,7 +78,11 @@ const Header = () => {
           />
         </nav>
       </aside>
-    </main>
+
+
+
+
+    </section>
   );
 };
 
