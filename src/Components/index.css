@@ -1,8 +1,9 @@
 .icon-container {
   /* the container has a defined size or flex properties */
   display: flex;
-  cursor: pointer; /* Add a pointer cursor for better UX */
+  cursor: pointer; 
   position: relative;
+  gap: 8;
   width: 24px; /* Adjusted size as needed */
   height: 24px; /* Adjusted size as needed */
 }
