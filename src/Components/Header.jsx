@@ -11,21 +11,16 @@ const Header = () => {
   return (
     <main className="flex h-screen overflow-hidden bg-indigo-100 ">
       <aside
-        className={`bg-purple-500 flex h-screen  ${expanded ? "w-96" : "w-24"} `}
+        className={`bg-purple-500 flex h-screen px-6  ${expanded ? "w-96" : "w-24"} `}
       >
-        <div onClick={() => setExpanded(!expanded)} className=" ">
-          <button className="icon-contianer ">
+        <div onClick={() => setExpanded(!expanded)} className="flex gap-6 ">
+          <button className="icon-container ">
             <IoChatbubbleEllipsesOutline size={30} className="icon-default" />
-            <FiSidebar
-              size={30}
-              className="icon-hover"
-              aria-label="Close sidebar" />
+            <FiSidebar size={30} className="icon-hover" />
           </button>
-          <span> 
-            <button> 
-                < FiSidebar/>
-            </button>
-          </span>
+          <button>
+            <FiSidebar/>
+          </button>
         </div>
       </aside>
     </main>
