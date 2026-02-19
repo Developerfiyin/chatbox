@@ -83,7 +83,11 @@ const Header = () => {
         <header className="h-20  flex justify-between p-4 bg-white ">
           <div className=" ">
         
-        
+        <select className="bg-neutral-200 w-full text-white p-2 rounded-lg ring-2 ring-purple-400 border-none outline-none">
+        <option value="4o" >ChatGPT 4o</option>
+         <option value="mini">ChatGPT 4o-mini</option>
+        </select>
+
           </div>
         </header>
       </main>
