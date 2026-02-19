@@ -7,6 +7,7 @@ import { PiImagesSquareBold } from "react-icons/pi";
 import { GrAppsRounded } from "react-icons/gr";
 import { BsFolderPlus } from "react-icons/bs";
 import { TbCircleChevronRight } from "react-icons/tb";
+import { IoCheckmark } from "react-icons/io5";
 
 import { FiSidebar } from "react-icons/fi";
 import "./index.css";
@@ -82,22 +83,28 @@ const Header = () => {
       <main className="flex flex-col flex-1 ">
         <header className="h-20  flex justify-between p-4 bg-white ">
           <div className=" ">
-        
-   <div class="relative">
+            <div class="relative">
+              <select class="block w-full bg-white border border-purple-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 appearance-none">
+                <option value="gpt">CHATGPT</option>
+                <option value="mini">
+                  {" "}
+                  <button>
+                    Chatgpt Go
+                    <IoCheckmark />
+                  </button>
+                </option>
+              </select>
 
-  <select class="block w-full bg-white border border-purple-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 appearance-none">
-    <option value="gpt">CHATGPT</option>
-    <option value="mini"> Chatgpt Go</option>
-
-    <option value="option3">Option 3</option>
-  </select>
-
-  <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 6.757 7.586 5.343 9z"/></svg>
-  </div>
-</div>
-
-
+              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                <svg
+                  class="fill-current h-4 w-4"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 6.757 7.586 5.343 9z" />
+                </svg>
+              </div>
+            </div>
           </div>
         </header>
       </main>
