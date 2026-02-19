@@ -3,6 +3,8 @@ import { FaRocketchat } from "react-icons/fa";
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 import { LuNotebookPen } from "react-icons/lu";
 import { IoSearchOutline } from "react-icons/io5";
+import { PiImagesSquareBold } from "react-icons/pi";
+
 
 import { FiSidebar } from "react-icons/fi";
 import "./index.css";
@@ -42,130 +44,20 @@ const Header = () => {
           <NavItem
             icon={<IoSearchOutline />}
             label="Search chat"
+            active
+            expanded={expanded}
+          />
+
+          <NavItem
+            icon={<PiImagesSquareBold />}
+            label="Images"
+            active
             expanded={expanded}
           />
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          
         </nav>
       </aside>
     </main>
