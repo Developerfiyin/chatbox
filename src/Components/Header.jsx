@@ -6,6 +6,7 @@ import { IoSearchOutline } from "react-icons/io5";
 import { PiImagesSquareBold } from "react-icons/pi";
 import { GrAppsRounded } from "react-icons/gr";
 import { BsFolderPlus } from "react-icons/bs";
+import { TbCircleChevronRight } from "react-icons/tb";
 
 import { FiSidebar } from "react-icons/fi";
 import "./index.css";
@@ -62,12 +63,19 @@ const Header = () => {
             active
             expanded={expanded}
           />
+ <NavItem
+            icon={ <TbCircleChevronRight />
+  }
+            label="Codex"
+            active
+            expanded={expanded}
+          />
 
 
 
           <NavItem
             icon={<BsFolderPlus/> }
-            label="Apps"
+            label="Projects"
             active
             expanded={expanded}
           />
