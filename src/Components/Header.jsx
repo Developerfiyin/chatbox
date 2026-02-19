@@ -4,7 +4,7 @@ import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 import { LuNotebookPen } from "react-icons/lu";
 import { IoSearchOutline } from "react-icons/io5";
 import { PiImagesSquareBold } from "react-icons/pi";
-
+import { GrAppsRounded } from "react-icons/gr";
 
 import { FiSidebar } from "react-icons/fi";
 import "./index.css";
@@ -22,7 +22,7 @@ const Header = () => {
           onClick={() => setExpanded(!expanded)}
           className="h-20 flex items-center text-center "
         >
-          <button className="icon-container px-4">
+          <button className="icon-container px-3">
             <IoChatbubbleEllipsesOutline className="icon-default text-2xl " />
             <FiSidebar className="icon-hover text-2xl" />
           </button>
@@ -55,9 +55,12 @@ const Header = () => {
             expanded={expanded}
           />
 
-
-
-
+          <NavItem
+            icon={<GrAppsRounded />}
+            label="Apps"
+            active
+            expanded={expanded}
+          />
         </nav>
       </aside>
     </main>
