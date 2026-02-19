@@ -5,6 +5,7 @@ import { LuNotebookPen } from "react-icons/lu";
 import { IoSearchOutline } from "react-icons/io5";
 import { PiImagesSquareBold } from "react-icons/pi";
 import { GrAppsRounded } from "react-icons/gr";
+import { BsFolderPlus } from "react-icons/bs";
 
 import { FiSidebar } from "react-icons/fi";
 import "./index.css";
@@ -61,6 +62,17 @@ const Header = () => {
             active
             expanded={expanded}
           />
+
+
+
+          <NavItem
+            icon={<BsFolderPlus/> }
+            label="Apps"
+            active
+            expanded={expanded}
+          />
+
+
         </nav>
       </aside>
     </main>
