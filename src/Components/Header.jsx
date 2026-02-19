@@ -79,9 +79,16 @@ const Header = () => {
         </nav>
       </aside>
 
-
-
-
+      <main className="flex flex-col flex-1 ">
+        <header className="h-20  flex justify-between p-4 bg-white ">
+          <div className=" ">
+            <select name="gpt" id="" className="border border-indigo-100" >
+              <option value="">CHAT GPT</option>
+              <option value=""> </option>
+            </select>
+          </div>
+        </header>
+      </main>
     </section>
   );
 };
