@@ -9,6 +9,8 @@ import { BsFolderPlus } from "react-icons/bs";
 import { TbCircleChevronRight } from "react-icons/tb";
 import { IoCheckmark } from "react-icons/io5";
 import { LuGift } from "react-icons/lu";
+import { FiUserPlus } from "react-icons/fi";
+import { RiUserAddLine } from "react-icons/ri";
 
 import { FiSidebar } from "react-icons/fi";
 import "./index.css";
@@ -107,10 +109,14 @@ const Header = () => {
           </div>
 
           <button className="bg-indigo-50 text-indigo-400 font-semibold items-center flex mx-auto p-2 rounded-lg text-center ">
-              <LuGift />
+            <LuGift />
             Claim offer
-          
           </button>
+
+          <div>
+            <FiUserPlus />
+            <RiUserAddLine />
+          </div>
         </header>
       </main>
     </section>
