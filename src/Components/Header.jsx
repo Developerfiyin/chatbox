@@ -119,10 +119,40 @@ const Header = () => {
           </div>
         </header>
 
-       <div className="mx-auto ">
-       
-       
-       </div>
+     <div className="flex flex-col w-full max-w-3xl mx-auto p-4">
+      <div className="relative flex items-end w-full bg-white dark:bg-[#2f2f2f] rounded-2xl border border-gray-200 dark:border-zinc-700 shadow-sm focus-within:ring-1 focus-within:ring-gray-300 transition-all px-3 py-3">
+        
+        {/* Attachment Icon */}
+        <button className="p-2 text-gray-500 hover:bg-gray-100 dark:hover:bg-zinc-800 rounded-lg transition-colors">
+          <HiPlus className="text-xl" />
+        </button>
+
+        {/* Text Input */}
+        <textarea
+          ref={textareaRef}
+          rows={1}
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          placeholder="Message ChatGPT..."
+          className="flex-1 max-h-60 resize-none bg-transparent border-none focus:ring-0 text-gray-800 dark:text-zinc-100 py-2 px-2 placeholder-gray-500"
+        />
+
+        {/* Send Button */}
+        <button 
+          disabled={!message.trim()}
+          className={`p-2 rounded-lg transition-all ${
+            message.trim() 
+            ? 'bg-black text-white dark:bg-white dark:text-black cursor-pointer' 
+            : 'bg-gray-200 text-gray-400 dark:bg-zinc-800 dark:text-zinc-600 cursor-not-allowed'
+          }`}
+        >
+          <HiArrowUp className="text-xl font-bold" />
+        </button>
+      </div>
+      <p className="text-xs text-center text-gray-500 mt-3">
+        ChatGPT can make mistakes. Check important info.
+      </p>
+    </div>
 
 
 
