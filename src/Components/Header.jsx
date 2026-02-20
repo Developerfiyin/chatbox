@@ -11,6 +11,7 @@ import { IoCheckmark } from "react-icons/io5";
 import { LuGift } from "react-icons/lu";
 import { FiUserPlus } from "react-icons/fi";
 import { RiUserAddLine } from "react-icons/ri";
+import { TbCircleDotted } from "react-icons/tb";
 
 import { FiSidebar } from "react-icons/fi";
 import "./index.css";
@@ -20,9 +21,9 @@ const Header = () => {
   const [expanded, setExpanded] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <section className="flex h-screen overflow-hidden bg-indigo-100 ">
+    <section className="flex h-screen overflow-hidden bg-indigo-200 ">
       <aside
-        className={`bg-purple-300 flex flex-col  border-indigo-400 border-l text-center ${expanded ? "w-65" : "w-13"} `}
+        className={`bg-indigo-100 flex flex-col  border-indigo-400 border-l text-center ${expanded ? "w-65" : "w-13"} `}
       >
         <div
           onClick={() => setExpanded(!expanded)}
@@ -89,7 +90,6 @@ const Header = () => {
             <select class="block w-full bg-white border border-purple-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 appearance-none">
               <option value="gpt">CHATGPT</option>
               <option value="mini">
-                {" "}
                 <button>
                   Chatgpt Go
                   <IoCheckmark />
@@ -113,9 +113,9 @@ const Header = () => {
             Claim offer
           </button>
 
-          <div>
-            <FiUserPlus />
-            <RiUserAddLine />
+          <div className="flex gap-5 mr-9 ">
+            <RiUserAddLine size={23} />
+            <TbCircleDotted size={23} />
           </div>
         </header>
       </main>
@@ -126,7 +126,7 @@ const Header = () => {
 function NavItem({ icon, label, active, expanded }) {
   return (
     <button
-      className={`w-full flex items-center rounded-2xl transition-all ${active ? "text-purple-100 " : "text-purple-200 bg-indigo-50"}`}
+      className={`w-full flex items-center rounded-2xl transition-all ${active ? "text-neutral-900 " : "text-purple-200 bg-indigo-50"}`}
     >
       <span className={`text-xl ${!expanded && "mx-auto"}`}>{icon}</span>
 
