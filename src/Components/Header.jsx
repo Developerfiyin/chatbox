@@ -12,6 +12,8 @@ import { LuGift } from "react-icons/lu";
 import { FiUserPlus } from "react-icons/fi";
 import { RiUserAddLine } from "react-icons/ri";
 import { TbCircleDotted } from "react-icons/tb";
+import { useRef, useEffect } from "react";
+import { HiPlus, HiArrowUp } from "react-icons/hi2";
 
 import { FiSidebar } from "react-icons/fi";
 import "./index.css";
@@ -130,8 +132,13 @@ const Header = () => {
           </div>
         </header>
 
-        <div className="flex flex-col w-full max-w-3xl mx-auto p-4">
-          <div className="relative flex items-end w-full bg-white dark:bg-[#2f2f2f] rounded-2xl border border-gray-200 dark:border-zinc-700 shadow-sm focus-within:ring-1 focus-within:ring-gray-300 transition-all px-3 py-3">
+        <div className="flex flex-col flex-1 justify-center items-center  w-full max-w-3xl mx-auto p-4">
+
+
+            <h2 className="font-semibold text-4xl mb-8 ">
+                What Are You Working On ?
+            </h2>
+          <div className="relative flex  w-full bg-white dark:bg-[#2f2f2f] rounded-2xl border border-gray-200 dark:border-zinc-700 shadow-sm focus-within:ring-1 focus-within:ring-gray-300 transition-all px-3 py-3">
             {/* Attachment Icon */}
             <button className="p-2 text-gray-500 hover:bg-gray-100 dark:hover:bg-zinc-800 rounded-lg transition-colors">
               <HiPlus className="text-xl" />
@@ -143,13 +150,13 @@ const Header = () => {
               rows={1}
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              placeholder="Message ChatGPT..."
+              placeholder="Ask Anything..."
               className="flex-1 max-h-60 resize-none bg-transparent border-none focus:ring-0 text-gray-800 dark:text-zinc-100 py-2 px-2 placeholder-gray-500"
             />
 
             {/* Send Button */}
             <button
-              disabled={!message.trim()}
+              onSubmit={!message.trim()}
               className={`p-2 rounded-lg transition-all ${
                 message.trim()
                   ? "bg-black text-white dark:bg-white dark:text-black cursor-pointer"
