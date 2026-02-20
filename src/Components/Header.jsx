@@ -117,13 +117,15 @@ const Header = () => {
             <RiUserAddLine size={23} />
             <TbCircleDotted size={23} />
           </div>
-
         </header>
 
+       <div className="mx-auto ">
+       
+       
+       </div>
 
 
 
-        
       </main>
     </section>
   );
