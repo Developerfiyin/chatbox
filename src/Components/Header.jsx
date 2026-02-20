@@ -113,11 +113,17 @@ const Header = () => {
             Claim offer
           </button>
 
-          <div className="flex gap-5 mr-9 ">
+          <div className="flex space-x-4 mr-6 ">
             <RiUserAddLine size={23} />
             <TbCircleDotted size={23} />
           </div>
+
         </header>
+
+
+
+
+        
       </main>
     </section>
   );
@@ -134,9 +140,13 @@ function NavItem({ icon, label, active, expanded }) {
         className={`ml-2 overflow-hidden text-nowrap transition-all ${expanded ? "w-auto opacity-90" : "w-0 opacity-0"}`}
       >
         {label}
-      </span>
+      </span> 
     </button>
   );
 }
 
+
+function Input() {
+
+}
 export default Header;
