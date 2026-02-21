@@ -188,16 +188,10 @@ const Header = () => {
             />
             {/* Send Button */}
             <div className="flex justify-center ml-2 gap-1">
-              <button
-                disabled={!message.trim()}
-                className={`p-2 rounded-full items-center hover:bg-gray-100 transition-all ${
-                  message.trim()
-                    ? " text-gray-800 dark:bg-white  dark:text-black cursor-pointer"
-                    : " text-gray-800  dark:bg-zinc-800 dark:text-zinc-600 cursor-pointer "
-                }`}
-              >
-                <FaMicrophone className="text-xl font-bold" />
-              </button>
+            
+
+
+            
               {/* THE ANIMATION WAVE*/}
               <button
                 onSubmit={!message.trim()}
@@ -242,3 +236,9 @@ function NavItem({ icon, label, active, expanded }) {
 }
 
 export default Header;
+  ? " text-gray-800 dark:bg-white  dark:text-black cursor-pointer"
+                    : " text-gray-800  dark:bg-zinc-800 dark:text-zinc-600 cursor-pointer "
+
+
+
+                    p-2 rounded-full items-center hover:bg-gray-100 transition-al
