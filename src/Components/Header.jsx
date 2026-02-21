@@ -1,4 +1,5 @@
 import React from "react";
+
 import { FaRocketchat } from "react-icons/fa";
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 import { LuNotebookPen } from "react-icons/lu";
@@ -13,8 +14,6 @@ import { RiUserAddLine } from "react-icons/ri";
 import { TbCircleDotted } from "react-icons/tb";
 import { useRef, useEffect } from "react";
 import { HiPlus, HiArrowUp } from "react-icons/hi2";
-import { LuChevronDown, LuBrain, LuSparkles, LuZap } from "react-icons/lu";
-import { Menu,MenuButton, MenuItems, MenuItem } from "@headlessui/react";
 import { FiSidebar } from "react-icons/fi";
 import "./index.css";
 import { useState } from "react";
@@ -32,27 +31,6 @@ const Header = () => {
   }, [message]);
 
   const [expanded, setExpanded] = useState(false);
-
-  const models = [
-    {
-      id: "gpt-4o",
-      name: "GPT-4o",
-      desc: "Great for most tasks",
-      icon: LuSparkles,
-    },
-    {
-      id: "gpt-4",
-      name: "GPT-4",
-      desc: "Powerful for complex logic",
-      icon: LuBrain,
-    },
-    {
-      id: "gpt-3.5",
-      name: "GPT-3.5",
-      desc: "Fast for simple chats",
-      icon: LuZap,
-    },
-  ];
 
   const [isOpen, setIsOpen] = useState(false);
   return (
@@ -135,44 +113,6 @@ const Header = () => {
       <main className="flex flex-col flex-1 ">
         <header className="h-20  flex justify-between p-4 bg-white ">
           <div className="relative pb-3 pr-4">
-            <Menu as="div" className="relative inline-block text-left">
-              {/* Trigger: Completely borderless with ghost hover */}
-              <MenuButton className="inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-semibold text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors focus:outline-none">
-                GPT-4o
-                <LuChevronDown className="h-4 w-4 text-gray-500" />
-              </MenuButton>
-
-              {/* Options Panel: Uses shadow-2xl instead of a border */}
-              <MenuItems
-                transition
-                className="absolute left-0 z-10 mt-2 w-64 origin-top-left rounded-xl bg-white dark:bg-zinc-900 shadow-2xl ring-1 ring-black/5 transition focus:outline-none data-closed:scale-95 data-closed:opacity-0"
-              >
-                <div className="p-1.5">
-                  {models.map((model) => (
-                    <MenuItem key={model.id}>
-                      {({ focus }) => (
-                        <button
-                          className={`${
-                            focus ? "bg-gray-100 dark:bg-zinc-800" : ""
-                          } group flex w-full items-start gap-3 rounded-lg p-2 text-left transition-colors`}
-                        >
-                          <model.icon className="mt-1 h-4 w-4 text-gray-500 group-hover:text-gray-900 dark:group-hover:text-white" />
-                          <div>
-                            <p className="text-sm font-medium text-gray-900 dark:text-white">
-                              {model.name}
-                            </p>
-                            <p className="text-xs text-gray-500">
-                              {model.desc}
-                            </p>
-                          </div>
-                        </button>
-                      )}
-                    </MenuItem>
-                  ))}
-                </div>
-              </MenuItems>
-            </Menu>
-
             <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
               <svg
                 className="fill-current h-4 w-4"
@@ -252,5 +192,4 @@ function NavItem({ icon, label, active, expanded }) {
   );
 }
 
-function Input() {}
 export default Header;
