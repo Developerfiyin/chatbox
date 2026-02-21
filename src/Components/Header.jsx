@@ -33,9 +33,11 @@ const people = [
   { id: 3, name: "LeBron" },
 ];
 const Header = () => {
+  const [expanded, setExpanded] = useState(false);
+
   const [selected, setSelected] = useState(people[0]);
 
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState("");
   const textareaRef = useRef(null);
 
   const handleInput = (e) => {
@@ -43,8 +45,8 @@ const Header = () => {
     setMessage(target.value);
 
     // FIX: Reset height to 'inherit' first to get accurate scrollHeight
-    target.style.height = 'inherit';
-    
+    target.style.height = "inherit";
+
     // Set the new height based on content
     const newHeight = target.scrollHeight;
     target.style.height = `${newHeight}px`;
@@ -52,22 +54,18 @@ const Header = () => {
 
   const handleKeyDown = (e) => {
     // Submit on Enter, but allow Shift+Enter for new lines
-    if (e.key === 'Enter' && !e.shiftKey) {
+    if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
       if (message.trim()) {
         console.log("Sending:", message);
-        setMessage('');
+        setMessage("");
         // Reset height back to original after sending
-        if (textareaRef.current) textareaRef.current.style.height = 'inherit';
+        if (textareaRef.current) textareaRef.current.style.height = "inherit";
       }
     }
 
-
-
-  const [expanded, setExpanded] = useState(false);
-
-  const [isOpen, setIsOpen] = useState(false);
-}
+    const [isOpen, setIsOpen] = useState(false);
+  };
   return (
     <section className="flex h-screen overflow-hidden bg-white ">
       <aside
@@ -178,31 +176,38 @@ const Header = () => {
               <HiPlus className="text-xl" />
             </button>
 
-           
+            <textarea
+              ref={textareaRef}
+              rows={1}
+              value={message}
+              onChange={handleInput}
+              onKeyDown={handleKeyDown}
+              placeholder="Message ChatGPT"
+              style={{ minHeight: "44px" }} // Ensures it starts at a nice height
+              className="flex-1 max-h-50 resize-none bg-transparent border-none focus:ring-0 text-[16px] leading-6 text-gray-800 dark:text-zinc-100 py-2.5 px-3 placeholder-gray-500 overflow-y-auto"
+            />
             {/* Send Button */}
             <div className="flex justify-center ml-2 gap-1">
               <button
                 disabled={!message.trim()}
                 className={`p-2 rounded-full items-center hover:bg-gray-100 transition-all ${
                   message.trim()
-                    ? " text-gray-800 dark:bg-white  dark:text-black cursor-pointer" 
+                    ? " text-gray-800 dark:bg-white  dark:text-black cursor-pointer"
                     : " text-gray-800  dark:bg-zinc-800 dark:text-zinc-600 cursor-pointer "
                 }`}
               >
                 <FaMicrophone className="text-xl font-bold" />
-            
               </button>
               {/* THE ANIMATION WAVE*/}
               <button
                 onSubmit={!message.trim()}
                 className={`px-2 py-1 rounded-full hover:bg-black/80 transition-all ${
                   message.trim()
-                    ? " bg-black text-white dark:bg-white dark:text-black cursor-pointer"  
+                    ? " bg-black text-white dark:bg-white dark:text-black cursor-pointer"
                     : "bg-black/90 text-white dark:bg-zinc-800 dark:text-zinc-600 cursor-pointer"
                 }`}
               >
-                <PiWaveformBold className="text-xl font-bold" /> 
-    
+                <PiWaveformBold className="text-xl font-bold" />
               </button>
             </div>
           </div>
