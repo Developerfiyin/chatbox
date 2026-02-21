@@ -35,20 +35,41 @@ const people = [
 const Header = () => {
   const [selected, setSelected] = useState(people[0]);
 
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState('');
   const textareaRef = useRef(null);
 
-  // Auto-resize logic
-  useEffect(() => {
-    if (textareaRef.current) {
-      textareaRef.current.style.height = "auto";
-      textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
+  const handleInput = (e) => {
+    const target = e.target;
+    setMessage(target.value);
+
+    // FIX: Reset height to 'inherit' first to get accurate scrollHeight
+    target.style.height = 'inherit';
+    
+    // Set the new height based on content
+    const newHeight = target.scrollHeight;
+    target.style.height = `${newHeight}px`;
+  };
+
+  const handleKeyDown = (e) => {
+    // Submit on Enter, but allow Shift+Enter for new lines
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      if (message.trim()) {
+        console.log("Sending:", message);
+        setMessage('');
+        // Reset height back to original after sending
+        if (textareaRef.current) textareaRef.current.style.height = 'inherit';
+      }
     }
-  }, [message]);
+
+
+
+
 
   const [expanded, setExpanded] = useState(false);
 
   const [isOpen, setIsOpen] = useState(false);
+}
   return (
     <section className="flex h-screen overflow-hidden bg-white ">
       <aside
