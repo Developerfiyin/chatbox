@@ -11,6 +11,7 @@ import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 import { LuNotebookPen } from "react-icons/lu";
 import { IoSearchOutline } from "react-icons/io5";
 import { FaMicrophone } from "react-icons/fa6";
+import { PiWaveformBold } from "react-icons/pi";
 
 import { PiImagesSquareBold } from "react-icons/pi";
 import { GrAppsRounded } from "react-icons/gr";
@@ -169,18 +170,26 @@ const Header = () => {
             />
 
             {/* Send Button */}
-            <button
-              disabled={!message.trim()}
-              className={`p-2 rounded-lg transition-all ${
-                message.trim()
-                  ? "bg-black text-white dark:bg-white dark:text-black cursor-pointer"
-                  : "bg-gray-200 text-gray-400 dark:bg-zinc-800 dark:text-zinc-600 cursor-not-allowed"
-              }`}
-            >
-              <FaMicrophone className="text-xl font-bold"/>
+            <div className="flex gap-4">
+              <button
+                disabled={!message.trim()}
+                className={`p-2 rounded-lg transition-all ${
+                  message.trim()
+                    ? "bg-black text-white dark:bg-white dark:text-black cursor-pointer"
+                    : "bg-gray-200 text-gray-400 dark:bg-zinc-800 dark:text-zinc-600 cursor-not-allowed"
+                }`}
+              >
+                <FaMicrophone className="text-xl font-bold" />
+              </button>
 
-            </button>
+
+
+              
+            </div>
           </div>
+
+
+
           <p className="text-xs text-center text-gray-500 mt-3">
             ChatGPT can make mistakes. Check important info.
           </p>
@@ -195,7 +204,11 @@ function NavItem({ icon, label, active, expanded }) {
     <button
       className={`w-full flex items-center rounded-2xl transition-all ${active ? "text-neutral-900 " : "text-purple-200 bg-indigo-50"}`}
     >
-      <span className={`text-xl hover:bg-neutral-300 hover:p-2 rounded-lg ${!expanded && "mx-auto"}`}>{icon}</span>
+      <span
+        className={`text-xl hover:bg-neutral-300 hover:p-2 rounded-lg ${!expanded && "mx-auto"}`}
+      >
+        {icon}
+      </span>
 
       <span
         className={`ml-2 overflow-hidden text-nowrap transition-all ${expanded ? "w-auto opacity-90" : "w-0 opacity-0"}`}
