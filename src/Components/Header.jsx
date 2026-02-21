@@ -64,8 +64,6 @@ const Header = () => {
 
 
 
-
-
   const [expanded, setExpanded] = useState(false);
 
   const [isOpen, setIsOpen] = useState(false);
@@ -180,16 +178,7 @@ const Header = () => {
               <HiPlus className="text-xl" />
             </button>
 
-            {/* Text Input */}
-            <textarea
-              ref={textareaRef}
-              rows={1}
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              placeholder="Ask Anything..."
-              className="flex-1 max-h-60 resize-none overflow-y-auto bg-transparent border-none focus:ring-0 text-gray-800 dark:text-zinc-100 py-2 px-2 placeholder-gray-500"
-            />
-
+           
             {/* Send Button */}
             <div className="flex justify-center ml-2 gap-1">
               <button
