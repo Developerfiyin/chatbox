@@ -10,6 +10,8 @@ import { FaRocketchat } from "react-icons/fa";
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 import { LuNotebookPen } from "react-icons/lu";
 import { IoSearchOutline } from "react-icons/io5";
+import { FaMicrophone } from "react-icons/fa6";
+
 import { PiImagesSquareBold } from "react-icons/pi";
 import { GrAppsRounded } from "react-icons/gr";
 import { BsFolderPlus } from "react-icons/bs";
@@ -124,25 +126,18 @@ const Header = () => {
       </aside>
 
       <main className="flex flex-col flex-1 ">
-        <header className="h-20  flex justify-between p-4 bg-white ">
-          <div class="w-72">
-            <label
-              for="options"
-              class="block text-sm font-medium text-gray-700 mb-1"
-            >
-              Select an option
-            </label>
+        <header className="h-20  flex justify-between  p-4 bg-white ">
+          <div className="mb-20">
             <select
               id="options"
-              class="block w-full rounded-md border-0 py-2 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6 cursor-pointer"
+              className="block w-full rounded-md py-2 pl-5 text-gray-900 hover:bg-gray-100 focus:ring-1 focus:ring-gray-600 items-center md:text-xl sm:leading-6 cursor-pointer"
             >
-              <option value="1">Option One</option>
-              <option value="2">Option Two</option>
-              <option value="3">Option Three</option>
+              <option value="1">ChatGPT</option>
+              <option value="2">ChatGPT Plus</option>
             </select>
           </div>
 
-          <button className="bg-indigo-50 text-indigo-400 font-semibold items-center mb-4 flex  ml-45 px-3 rounded-full text-center ">
+          <button className="bg-indigo-50 text-indigo-400 mr-17 font-semibold items-center mb-4 flex px-5   rounded-full text-center ">
             <LuGift />
             Claim offer
           </button>
@@ -153,11 +148,11 @@ const Header = () => {
           </div>
         </header>
 
-        <div className="flex flex-col flex-1 justify-center items-center  w-full max-w-3xl mx-auto p-4">
-          <h2 className="font-normal text-4xl mb-8 ">
+        <div className="flex flex-col justify-center items-center  w-full max-w-3xl mx-auto p-4">
+          <h2 className="font-normal text-4xl mt-20 ">
             What are you working on ?
           </h2>
-          <div className="relative flex  w-full bg-white dark:bg-[#2f2f2f] rounded-2xl dark:border-zinc-700 shadow-sm focus-within:ring-1 focus-within:ring-gray-300 transition-all px-3 py-3">
+          <div className="relative flex mt-10 w-full bg-white dark:bg-[#2f2f2f] border-gray-200 rounded-full border dark:border-gray-800 shadow-md transition-all px-3 py-3">
             {/* Attachment Icon */}
             <button className="p-2 text-gray-500 hover:bg-gray-100 dark:hover:bg-zinc-800 rounded-lg transition-colors">
               <HiPlus className="text-xl" />
@@ -182,7 +177,8 @@ const Header = () => {
                   : "bg-gray-200 text-gray-400 dark:bg-zinc-800 dark:text-zinc-600 cursor-not-allowed"
               }`}
             >
-              <HiArrowUp className="text-xl font-bold" />
+              <FaMicrophone className="text-xl font-bold"/>
+
             </button>
           </div>
           <p className="text-xs text-center text-gray-500 mt-3">
@@ -199,7 +195,7 @@ function NavItem({ icon, label, active, expanded }) {
     <button
       className={`w-full flex items-center rounded-2xl transition-all ${active ? "text-neutral-900 " : "text-purple-200 bg-indigo-50"}`}
     >
-      <span className={`text-xl ${!expanded && "mx-auto"}`}>{icon}</span>
+      <span className={`text-xl hover:bg-neutral-300 hover:p-2 rounded-lg ${!expanded && "mx-auto"}`}>{icon}</span>
 
       <span
         className={`ml-2 overflow-hidden text-nowrap transition-all ${expanded ? "w-auto opacity-90" : "w-0 opacity-0"}`}
