@@ -113,10 +113,16 @@ const Header = () => {
       <main className="flex flex-col flex-1 ">
         <header className="h-20  flex justify-between p-4 bg-white ">
           <div className="relative pb-3 pr-4">
-            <select className="block w-full bg-white font-normal text-xl text-gray-900 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 appearance-none">
-              <option value="gpt">ChatGPT</option>
-              <option value="mini">Chatgpt Go</option>
-            </select>
+            <div class="relative">
+              <select class="appearance-none border-none bg-transparent pr-8 focus:ring-0 cursor-pointer">
+                <option>GPT-4o</option>
+                <option>GPT-4</option>
+              </select>
+
+              <span class="absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none">
+                ▼
+              </span>
+            </div>
 
             <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
               <svg
