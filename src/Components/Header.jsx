@@ -1,4 +1,10 @@
 import React from "react";
+import {
+  Listbox,
+  ListboxButton,
+  ListboxOption,
+  ListboxOptions,
+} from "@headlessui/react";
 
 import { FaRocketchat } from "react-icons/fa";
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
@@ -18,7 +24,14 @@ import { FiSidebar } from "react-icons/fi";
 import "./index.css";
 import { useState } from "react";
 
+const people = [
+  { id: 1, name: "Durant" },
+  { id: 2, name: "Curry" },
+  { id: 3, name: "LeBron" },
+];
 const Header = () => {
+  const [selected, setSelected] = useState(people[0]);
+
   const [message, setMessage] = useState("");
   const textareaRef = useRef(null);
 
@@ -113,6 +126,27 @@ const Header = () => {
       <main className="flex flex-col flex-1 ">
         <header className="h-20  flex justify-between p-4 bg-white ">
           <div className="relative pb-3 pr-4">
+            <Listbox value={selected} onChange={setSelected}>
+              <ListboxButton className="w-48 rounded-lg bg-gray-100 py-2 px-3 text-left border">
+                {selected.name}
+              </ListboxButton>
+
+              <ListboxOptions
+                anchor="bottom"
+                className="w-48 rounded-lg border bg-white p-1 shadow-md"
+              >
+                {people.map((person) => (
+                  <ListboxOption
+                    key={person.id}
+                    value={person}
+                    className="cursor-pointer rounded-md py-1 px-3 data-[focus]:bg-blue-100"
+                  >
+                    {person.name}
+                  </ListboxOption>
+                ))}
+              </ListboxOptions>
+            </Listbox>x
+
             <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
               <svg
                 className="fill-current h-4 w-4"
