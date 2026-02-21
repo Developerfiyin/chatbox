@@ -170,13 +170,13 @@ const Header = () => {
             />
 
             {/* Send Button */}
-            <div className="flex justify-around gap-4">
+            <div className="flex justify-center ml-2 gap-2">
               <button
                 disabled={!message.trim()}
-                className={`p-2 rounded-full transition-all ${
+                className={`p-2 rounded-full hover:bg-gray-50 transition-all ${
                   message.trim()
-                    ? "bg-black text-white dark:bg-white  dark:text-black cursor-pointer"
-                    : " text-gray-900  dark:bg-zinc-800 dark:text-zinc-600 cursor-not-allowed"
+                    ? " text-gray-800 dark:bg-white  dark:text-black cursor-pointer"
+                    : " text-gray-800  dark:bg-zinc-800 dark:text-zinc-600 cursor-pointer "
                 }`}
               >
                 <FaMicrophone className="text-xl font-bold" />
@@ -184,10 +184,10 @@ const Header = () => {
               {/* THE ANIMATION WAVE*/}
               <button
                 onSubmit={!message.trim()}
-                className={`p-2 rounded-full transition-all ${
+                className={`px-2 py- rounded-full transition-all ${
                   message.trim()
-                    ? "bg-black text-white dark:bg-white dark:text-black cursor-pointer"
-                    : "bg-gray-200 text-gray-400 dark:bg-zinc-800 dark:text-zinc-600 cursor-not-allowed"
+                    ? "bg-black text-white dark:bg-white dark:text-black cursor-pointer" 
+                    : "bg-gray-200 text-gray-400 dark:bg-zinc-800 dark:text-zinc-600 cursor-pointer"
                 }`}
               >
                 <PiWaveformBold className="text-xl" />
