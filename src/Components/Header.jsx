@@ -125,15 +125,10 @@ const Header = () => {
 
       <main className="flex flex-col flex-1 ">
         <header className="h-20  flex justify-between p-4 bg-white ">
-          <div className="">
-            <select
-              id="options"
-              className="block w-full rounded-md  py-2 pl-3 pr-10 text-gray-900 hover:bg-gray-100 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6 cursor-pointer"
-            >
-              <option value="1">ChatGPT </option>
-              <option value="2">ChatGpt Go </option>
-            </select>
-          </div>
+          <select className="bg-neutral-800 text-white p-2 rounded-lg border-none outline-none">
+            <option value="4o">ChatGPT 4o</option>
+            <option value="mini">ChatGPT 4o-mini</option>
+          </select>
 
           <button className="bg-indigo-50 text-indigo-400 font-semibold items-center mb-4 flex  ml-45 px-3 rounded-full text-center ">
             <LuGift />
