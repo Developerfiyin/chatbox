@@ -170,25 +170,30 @@ const Header = () => {
             />
 
             {/* Send Button */}
-            <div className="flex gap-4">
+            <div className="flex justify-around gap-4">
               <button
                 disabled={!message.trim()}
-                className={`p-2 rounded-lg transition-all ${
+                className={`p-2 rounded-full transition-all ${
+                  message.trim()
+                    ? "bg-black text-white dark:bg-white  dark:text-black cursor-pointer"
+                    : " text-gray-900  dark:bg-zinc-800 dark:text-zinc-600 cursor-not-allowed"
+                }`}
+              >
+                <FaMicrophone className="text-xl font-bold" />
+              </button>
+              {/* THE ANIMATION WAVE*/}
+              <button
+                onSubmit={!message.trim()}
+                className={`p-2 rounded-full transition-all ${
                   message.trim()
                     ? "bg-black text-white dark:bg-white dark:text-black cursor-pointer"
                     : "bg-gray-200 text-gray-400 dark:bg-zinc-800 dark:text-zinc-600 cursor-not-allowed"
                 }`}
               >
-                <FaMicrophone className="text-xl font-bold" />
+                <PiWaveformBold className="text-xl" />
               </button>
-
-
-
-              
             </div>
           </div>
-
-
 
           <p className="text-xs text-center text-gray-500 mt-3">
             ChatGPT can make mistakes. Check important info.
