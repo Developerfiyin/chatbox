@@ -125,20 +125,13 @@ const Header = () => {
 
       <main className="flex flex-col flex-1 ">
         <header className="h-20  flex justify-between p-4 bg-white ">
-          <div class="w-72">
-            <label
-              for="options"
-              class="block text-sm font-medium text-gray-700 mb-1"
-            >
-              Select an option
-            </label>
+          <div className="">
             <select
               id="options"
-              class="block w-full rounded-md border-0 py-2 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6 cursor-pointer"
+              className="block w-full rounded-md  py-2 pl-3 pr-10 text-gray-900 hover:bg-gray-100 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6 cursor-pointer"
             >
-              <option value="1">Option One</option>
-              <option value="2">Option Two</option>
-              <option value="3">Option Three</option>
+              <option value="1">ChatGPT </option>
+              <option value="2">ChatGpt Go </option>
             </select>
           </div>
 
