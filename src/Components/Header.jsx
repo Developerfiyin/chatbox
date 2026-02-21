@@ -12,7 +12,7 @@ import { LuNotebookPen } from "react-icons/lu";
 import { IoSearchOutline } from "react-icons/io5";
 import { FaMicrophone } from "react-icons/fa6";
 import { PiWaveformBold } from "react-icons/pi";
-
+import { FaArrowUp } from "react-icons/fa";
 import { PiImagesSquareBold } from "react-icons/pi";
 import { GrAppsRounded } from "react-icons/gr";
 import { BsFolderPlus } from "react-icons/bs";
@@ -151,7 +151,7 @@ const Header = () => {
 
         <div className="flex flex-col justify-center items-center  w-full max-w-3xl mx-auto p-4">
           <h2 className="font-normal text-4xl mt-20 ">
-            What are you working on ?
+            What are you working on?
           </h2>
           <div className="relative flex mt-10 w-full bg-white dark:bg-[#2f2f2f] border-gray-200 rounded-full border dark:border-gray-800 shadow-md transition-all px-3 py-3">
             {/* Attachment Icon */}
@@ -170,27 +170,29 @@ const Header = () => {
             />
 
             {/* Send Button */}
-            <div className="flex justify-center ml-2 gap-2">
+            <div className="flex justify-center ml-2 gap-1">
               <button
                 disabled={!message.trim()}
-                className={`p-2 rounded-full hover:bg-gray-50 transition-all ${
+                className={`p-2 rounded-full items-center hover:bg-gray-100 transition-all ${
                   message.trim()
-                    ? " text-gray-800 dark:bg-white  dark:text-black cursor-pointer"
+                    ? " text-gray-800 dark:bg-white  dark:text-black cursor-pointer" 
                     : " text-gray-800  dark:bg-zinc-800 dark:text-zinc-600 cursor-pointer "
                 }`}
               >
                 <FaMicrophone className="text-xl font-bold" />
+            
               </button>
               {/* THE ANIMATION WAVE*/}
               <button
                 onSubmit={!message.trim()}
-                className={`px-2 py- rounded-full transition-all ${
+                className={`px-2 py-1 rounded-full hover:bg-black/80 transition-all ${
                   message.trim()
-                    ? "bg-black text-white dark:bg-white dark:text-black cursor-pointer" 
-                    : "bg-gray-200 text-gray-400 dark:bg-zinc-800 dark:text-zinc-600 cursor-pointer"
+                    ? " bg-black text-white dark:bg-white dark:text-black cursor-pointer"  
+                    : "bg-black/90 text-white dark:bg-zinc-800 dark:text-zinc-600 cursor-pointer"
                 }`}
               >
-                <PiWaveformBold className="text-xl" />
+                <PiWaveformBold className="text-xl font-bold" /> 
+    
               </button>
             </div>
           </div>
