@@ -34,15 +34,15 @@ const Header = () => {
   const [expanded, setExpanded] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <section className="flex h-screen overflow-hidden bg-indigo-200 ">
+    <section className="flex h-screen overflow-hidden bg-white ">
       <aside
-        className={`bg-indigo-100 flex flex-col  border-indigo-400 border-l text-center ${expanded ? "w-65" : "w-13"} `}
+        className={`bg-gray-100 flex flex-col  border-indigo-400 border-l text-center ${expanded ? "w-72" : "w-13"} `}
       >
         <div
           onClick={() => setExpanded(!expanded)}
           className="h-20 flex items-center text-center "
         >
-          <button className="icon-container px-3">
+          <button className="icon-container mb-6 px-3">
             <IoChatbubbleEllipsesOutline className="icon-default text-2xl " />
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -50,7 +50,7 @@ const Header = () => {
               height="20"
               aria-hidden="true"
               data-rtl-flip=""
-              className="text-token-text-secondary text-4xl text-red-500 icon-lg mx-2"
+              className=" text-4xl bg-red-500  mx-2"
             >
               <use
                 href="/cdn/assets/sprites-core-mxwopdm6.svg#38e54b"
@@ -60,9 +60,9 @@ const Header = () => {
             <FiSidebar className="icon-hover text-2xl" />
           </button>
           <button
-            className={`ml-40 transition-opacity ${expanded ? "opacity-90" : "opacity-0 hidden"}`}
+            className={`ml-auto mr-9 mb-4 transition-opacity ${expanded ? "opacity-70" : "opacity-0 hidden"}`}
           >
-            <FiSidebar className="text-2xl" />
+            <FiSidebar className="text-xl text-neutral-500" />
           </button>
         </div>
 
@@ -112,9 +112,9 @@ const Header = () => {
 
       <main className="flex flex-col flex-1 ">
         <header className="h-20  flex justify-between p-4 bg-white ">
-          <div className="relative">
-            <select className="block w-full bg-white border border-purple-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 appearance-none">
-              <option value="gpt">CHATGPT</option>
+          <div className="relative pb-3 pr-4">
+            <select className="block w-full bg-white font-normal text-xl text-gray-900 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 appearance-none">
+              <option value="gpt">ChatGPT</option>
               <option value="mini">Chatgpt Go</option>
             </select>
 
@@ -129,7 +129,7 @@ const Header = () => {
             </div>
           </div>
 
-          <button className="bg-indigo-50 text-indigo-400 font-semibold items-center flex mx-auto p-2 rounded-lg text-center ">
+          <button className="bg-indigo-50 text-indigo-400 font-semibold items-center mb-4 flex  ml-45 px-3 rounded-full text-center ">
             <LuGift />
             Claim offer
           </button>
@@ -144,7 +144,7 @@ const Header = () => {
           <h2 className="font-normal text-4xl mb-8 ">
             What are you working on ?
           </h2>
-          <div className="relative flex  w-full bg-white dark:bg-[#2f2f2f] rounded-2xl border border-gray-200 dark:border-zinc-700 shadow-sm focus-within:ring-1 focus-within:ring-gray-300 transition-all px-3 py-3">
+          <div className="relative flex  w-full bg-white dark:bg-[#2f2f2f] rounded-2xl dark:border-zinc-700 shadow-sm focus-within:ring-1 focus-within:ring-gray-300 transition-all px-3 py-3">
             {/* Attachment Icon */}
             <button className="p-2 text-gray-500 hover:bg-gray-100 dark:hover:bg-zinc-800 rounded-lg transition-colors">
               <HiPlus className="text-xl" />
