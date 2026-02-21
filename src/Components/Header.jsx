@@ -1,5 +1,10 @@
 import React from "react";
-import { Listbox, ListboxButton, ListboxOption, ListboxOptions } from '@headlessui/react'
+import {
+  Listbox,
+  ListboxButton,
+  ListboxOption,
+  ListboxOptions,
+} from "@headlessui/react";
 
 import { FaRocketchat } from "react-icons/fa";
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
@@ -18,14 +23,14 @@ import { HiPlus, HiArrowUp } from "react-icons/hi2";
 import { FiSidebar } from "react-icons/fi";
 import "./index.css";
 import { useState } from "react";
-    
+
 const people = [
-  { id: 1, name: 'Durant' },
-  { id: 2, name: 'Curry' },
-  { id: 3, name: 'LeBron' },
-]
+  { id: 1, name: "Durant" },
+  { id: 2, name: "Curry" },
+  { id: 3, name: "LeBron" },
+];
 const Header = () => {
-  const [selected, setSelected] = useState(people[0])
+  const [selected, setSelected] = useState(people[0]);
 
   const [message, setMessage] = useState("");
   const textareaRef = useRef(null);
@@ -120,20 +125,21 @@ const Header = () => {
 
       <main className="flex flex-col flex-1 ">
         <header className="h-20  flex justify-between p-4 bg-white ">
-          <div className="relative pb-3 pr-4">
-
-
-
-            
-            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-              <svg
-                className="fill-current h-4 w-4"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-              >
-                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 6.757 7.586 5.343 9z" />
-              </svg>
-            </div>
+          <div class="w-72">
+            <label
+              for="options"
+              class="block text-sm font-medium text-gray-700 mb-1"
+            >
+              Select an option
+            </label>
+            <select
+              id="options"
+              class="block w-full rounded-md border-0 py-2 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6 cursor-pointer"
+            >
+              <option value="1">Option One</option>
+              <option value="2">Option Two</option>
+              <option value="3">Option Three</option>
+            </select>
           </div>
 
           <button className="bg-indigo-50 text-indigo-400 font-semibold items-center mb-4 flex  ml-45 px-3 rounded-full text-center ">
