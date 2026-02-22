@@ -189,12 +189,21 @@ const Header = () => {
             {/* Send Button */}
             <div className="flex justify-center ml-2 gap-1">
             
+<button 
+          disabled={!message.trim()}
+          className={`mb-1 mr-1 p-2 rounded-full transition-all ${
+            message.trim() 
+            ? 'bg-black text-white dark:bg-white dark:text-black shadow-sm' 
+            : 'bg-gray-300 text-gray-100 dark:bg-zinc-800 dark:text-zinc-600'
+          }`}
+        >
+          <HiArrowUp className="text-xl stroke-1" />
+        </button>
 
 
-            
               {/* THE ANIMATION WAVE*/}
               <button
-                onSubmit={!message.trim()}
+                disabled={!message.trim()}
                 className={`px-2 py-1 rounded-full hover:bg-black/80 transition-all ${
                   message.trim()
                     ? " bg-black text-white dark:bg-white dark:text-black cursor-pointer"
@@ -236,9 +245,9 @@ function NavItem({ icon, label, active, expanded }) {
 }
 
 export default Header;
-  ? " text-gray-800 dark:bg-white  dark:text-black cursor-pointer"
+  {/*? " text-gray-800 dark:bg-white  dark:text-black cursor-pointer"
                     : " text-gray-800  dark:bg-zinc-800 dark:text-zinc-600 cursor-pointer "
 
 
 
-                    p-2 rounded-full items-center hover:bg-gray-100 transition-al
+                    p-2 rounded-full items-center hover:bg-gray-100 transition-al */}
