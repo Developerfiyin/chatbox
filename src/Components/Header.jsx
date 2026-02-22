@@ -1,11 +1,4 @@
 import React from "react";
-import {
-  Listbox,
-  ListboxButton,
-  ListboxOption,
-  ListboxOptions,
-} from "@headlessui/react";
-
 import { FaRocketchat } from "react-icons/fa";
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 import { LuNotebookPen } from "react-icons/lu";
@@ -26,16 +19,8 @@ import { HiPlus, HiArrowUp } from "react-icons/hi2";
 import { FiSidebar } from "react-icons/fi";
 import "./index.css";
 import { useState } from "react";
-
-const people = [
-  { id: 1, name: "Durant" },
-  { id: 2, name: "Curry" },
-  { id: 3, name: "LeBron" },
-];
 const Header = () => {
   const [expanded, setExpanded] = useState(false);
-
-  const [selected, setSelected] = useState(people[0]);
 
   const [message, setMessage] = useState("");
   const textareaRef = useRef(null);
@@ -44,7 +29,6 @@ const Header = () => {
     const target = e.target;
     setMessage(target.value);
 
-    // FIX: Reset height to 'inherit' first to get accurate scrollHeight
     target.style.height = "inherit";
 
     // Set the new height based on content
@@ -69,7 +53,7 @@ const Header = () => {
   return (
     <section className="flex h-screen overflow-hidden bg-white ">
       <aside
-        className={`bg-gray-100 flex flex-col  border-indigo-400 border-l text-center ${expanded ? "w-72" : "w-13"} `}
+        className={`dark:bg-white/80 flex flex-col bg-white border-gray-700 border-r-2 text-center ${expanded ? "w-72" : "w-13"} `}
       >
         <div
           onClick={() => setExpanded(!expanded)}
@@ -166,7 +150,7 @@ const Header = () => {
           </div>
         </header>
 
-        <div className="flex flex-col justify-center items-center  w-full max-w-3xl mx-auto p-4">
+        <div className="flex flex-col justify-center items-center w-full max-w-3xl mx-auto p-4">
           <h2 className="font-normal text-4xl mt-20 ">
             What are you working on?
           </h2>
@@ -184,7 +168,7 @@ const Header = () => {
               onKeyDown={handleKeyDown}
               placeholder="Message ChatGPT"
               style={{ minHeight: "44px" }} // Ensures it starts at a nice height
-              className="flex-1 max-h-50 resize-none bg-transparent border-none focus:ring-0 text-[16px] leading-6 text-gray-800 dark:text-zinc-100 py-2.5 px-3 placeholder-gray-500 overflow-y-auto"
+              className="flex-1 max-h-50 resize-none outline-none bg-transparent border-none focus:ring-0 text-gray-800 text-[16px] leading-6 dark:outline  dark:text-zinc-100 py-2.5 px-3 placeholder-gray-600 overflow-y-auto"
             />
             {/* Send Button */}
             <div className="flex justify-center ml-2 gap-1">
@@ -202,7 +186,7 @@ const Header = () => {
               {/* THE ANIMATION WAVE*/}
               <button
                 disabled={!message.trim()}
-                className={`px-3 py-1 rounded-full hover:bg-black/80 transition-all ${
+                className={`px-3 py-2 rounded-full hover:bg-black/80 transition-all ${
                   message.trim()
                     ? " bg-black text-white dark:bg-white dark:text-black cursor-pointer"
                     : "bg-black/90 text-white dark:bg-zinc-800 dark:text-zinc-600 cursor-pointer"
