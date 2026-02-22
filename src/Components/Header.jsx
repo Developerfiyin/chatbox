@@ -53,13 +53,13 @@ const Header = () => {
   return (
     <section className="flex h-screen overflow-hidden bg-white ">
       <aside
-        className={`dark:bg-gray-800 flex flex-col bg-white border-gray-100 border-r text-center ${expanded ? "w-72" : "w-13"} `}
+        className={`dark:bg-gray-800 flex flex-col bg-white border-gray-100 border-r text-center ${expanded ? "bg-amber-500 w-72 " : "w-13"} `}
       >
         <div
           onClick={() => setExpanded(!expanded)}
           className="h-20 flex items-center text-center "
         >
-          <button className="icon-container mb-6 px-3">
+          <button className="icon-container mb-4 px-3">
             <IoChatbubbleEllipsesOutline className="icon-default text-2xl " />
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -77,13 +77,13 @@ const Header = () => {
             <FiSidebar className="icon-hover text-2xl" />
           </button>
           <button
-            className={`ml-auto mr-9 mb-4 transition-opacity ${expanded ? "opacity-70" : "opacity-0 hidden"}`}
+            className={`ml-auto mr-9 transition-opacity ${expanded ? "opacity-70" : "opacity-0 hidden"}`}
           >
             <FiSidebar className="text-xl text-neutral-500" />
           </button>
         </div>
 
-        <nav className="flex-1 px-3 space-y-2 mt-4">
+        <nav className="flex-1 px-3 space-y-2 mb-9">
           <NavItem
             icon={<LuNotebookPen />}
             label="New chat"
@@ -209,10 +209,10 @@ const Header = () => {
 function NavItem({ icon, label, active, expanded }) {
   return (
     <button
-      className={`w-full flex items-center rounded-2xl transition-all ${active ? "hover:bg-gray-400 hover:p-2 text-neutral-900 " : "text-purple-200 bg-indigo-50"}`}
+      className={`w-full flex items-center rounded-2xl transition-all ${active ? "hover:bg-gray-400 hover:p-2 text-neutral-900" : " text-purple-200 bg-indigo-50"}`}
     >
       <span
-        className={`text-xl not-dark:hover:bg-neutral-300 dark:hover:bg-gray-600 not-dark:hover:p-2 rounded-lg ${!expanded && "mx-auto"}`}
+        className={`text-xl not-dark:hover:bg-neutral-300 dark:hover:bg-gray-600 not-dark:hover:p-2 rounded-lg ${!expanded && "mx-auto "}`}
       >
         {icon}
       </span>
