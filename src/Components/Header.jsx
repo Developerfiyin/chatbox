@@ -52,7 +52,7 @@ const Header = () => {
   };
   return (
     <section className="flex h-screen overflow-hidden bg-white ">
-      <aside
+      <aside     className={` dark:bg-[#171717] border-r border-zinc-800 transition-all duration-300 p-2  gap-2
         className={`dark:bg-gray-800 flex flex-col bg-white border-gray-100 border-r text-center ${expanded ? "bg-amber-500 w-72 " : "w-13"} `}
       >
         <div
@@ -212,7 +212,7 @@ function NavItem({ icon, label, active, expanded }) {
       className={`w-full flex items-center rounded-2xl cursor-pointer duration-200 group  transition-all ${active ? "hover:bg-gray-400 hover:p-2 text-neutral-900" : " text-purple-200 bg-indigo-50"}`}
     >
       <span
-        className={`w-full px-3 py-2 rounded-lg hover:bg-zinc-800' ${expanded ? 'mr-3 text-zinc-400' : 'text-gray-600'}`}
+        className={`text-xl hover:bg-neutral-300 hover:p-2 rounded-lg ${expanded ? 'mr-3 text-zinc-400' : 'text-gray-600'}`}
       >
         {icon}
       </span>
