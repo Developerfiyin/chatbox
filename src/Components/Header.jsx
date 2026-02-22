@@ -83,7 +83,7 @@ const Header = () => {
           </button>
         </div>
 
-        <nav className="flex-1 px-3 space-y-2 mb-9">
+        <nav className="flex-1 px-3 space-y-2 mb-9  ">
           <NavItem
             icon={<LuNotebookPen />}
             label="New chat"
@@ -209,10 +209,10 @@ const Header = () => {
 function NavItem({ icon, label, active, expanded }) {
   return (
     <button
-      className={`w-full flex items-center rounded-2xl transition-all ${active ? "hover:bg-gray-400 hover:p-2 text-neutral-900" : " text-purple-200 bg-indigo-50"}`}
+      className={`w-full flex items-center rounded-2xl cursor-pointer duration-200 group  transition-all ${active ? "hover:bg-gray-400 hover:p-2 text-neutral-900" : " text-purple-200 bg-indigo-50"}`}
     >
       <span
-        className={`text-xl not-dark:hover:bg-neutral-300 dark:hover:bg-gray-600 not-dark:hover:p-2 rounded-lg ${isExpanded ? 'mr-3 text-zinc-400' : 'text-gray-600}`}
+        className={`w-full px-3 py-2 rounded-lg hover:bg-zinc-800' ${expanded ? 'mr-3 text-zinc-400' : 'text-gray-600'}`}
       >
         {icon}
       </span>
