@@ -212,7 +212,7 @@ function NavItem({ icon, label, active, expanded }) {
       className={`w-full flex items-center rounded-2xl transition-all ${active ? "hover:bg-gray-400 hover:p-2 text-neutral-900" : " text-purple-200 bg-indigo-50"}`}
     >
       <span
-        className={`text-xl not-dark:hover:bg-neutral-300 dark:hover:bg-gray-600 not-dark:hover:p-2 rounded-lg ${!expanded && "mx-auto "}`}
+        className={`text-xl not-dark:hover:bg-neutral-300 dark:hover:bg-gray-600 not-dark:hover:p-2 rounded-lg ${isExpanded ? 'mr-3 text-zinc-400' : 'text-gray-600}`}
       >
         {icon}
       </span>
