@@ -67,7 +67,7 @@ const Header = () => {
               height="20"
               aria-hidden="true"
               data-rtl-flip=""
-              className=" text-4xl bg-red-500  mx-2"
+              className=" text-4xl bg-500  mx-2"
             >
               <use
                 href="/cdn/assets/sprites-core-mxwopdm6.svg#38e54b"
@@ -83,7 +83,7 @@ const Header = () => {
           </button>
         </div>
 
-        <nav className="flex-1 px-3 space-y-2 mb-9  ">
+        <nav className="flex-1 px-1.5 space-y-2  ">
           <NavItem
             icon={<LuNotebookPen />}
             label="New chat"
@@ -101,7 +101,7 @@ const Header = () => {
           <NavItem
             icon={<PiImagesSquareBold />}
             label="Images"
-            active
+        
             expanded={expanded}
           />
 
@@ -128,7 +128,7 @@ const Header = () => {
       </aside>
 
       <main className="flex flex-col flex-1 ">
-        <header className="h-20  flex justify-between  p-4 bg-white ">
+        <header className="h-20  flex justify-between p-4 bg-white ">
           <div className="mb-20">
             <select
               id="options"
@@ -139,7 +139,7 @@ const Header = () => {
             </select>
           </div>
 
-          <button className="bg-indigo-50 text-indigo-400 mr-17 font-semibold items-center mb-4 flex px-5   rounded-full text-center ">
+          <button className="bg-indigo-50 text-indigo-400 mr-17 font-semibold items-center mb-4 flex px-5 rounded-full text-center ">
             <LuGift />
             Claim offer
           </button>
@@ -209,10 +209,10 @@ const Header = () => {
 function NavItem({ icon, label, active, expanded }) {
   return (
     <button
-      className={`w-full flex items-center rounded-2xl cursor-pointer duration-200 group  transition-all ${active ? " text-neutral-900" : " text-purple-200 "}`}
+      className={`w-full flex  items-center px-3 py-2 rounded-lg cursor-pointer duration-200 group transition-all ${active ? "hover:bg-amber-400  text-neutral-900" : "text-neutral-800 "}`}
     >
       <span
-        className={`text-xl rounded-lg ${expanded ? "mr-3 text-gray-800 " : "text-neutral-800 hover:bg-neutral-300 hover:p-2"}`}
+        className={`text-xl rounded-lg ${expanded ? " text-gray-800 items-center" : "text-neutral-800  hover:bg-neutral-300"}`}
       >
         {icon}
       </span>
