@@ -1,11 +1,4 @@
 import React from "react";
-import {
-  Listbox,
-  ListboxButton,
-  ListboxOption,
-  ListboxOptions,
-} from "@headlessui/react";
-
 import { FaRocketchat } from "react-icons/fa";
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 import { LuNotebookPen } from "react-icons/lu";
@@ -26,39 +19,47 @@ import { HiPlus, HiArrowUp } from "react-icons/hi2";
 import { FiSidebar } from "react-icons/fi";
 import "./index.css";
 import { useState } from "react";
-
-const people = [
-  { id: 1, name: "Durant" },
-  { id: 2, name: "Curry" },
-  { id: 3, name: "LeBron" },
-];
 const Header = () => {
-  const [selected, setSelected] = useState(people[0]);
+  const [expanded, setExpanded] = useState(false);
 
   const [message, setMessage] = useState("");
   const textareaRef = useRef(null);
 
-  // Auto-resize logic
-  useEffect(() => {
-    if (textareaRef.current) {
-      textareaRef.current.style.height = "auto";
-      textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
+  const handleInput = (e) => {
+    const target = e.target;
+    setMessage(target.value);
+
+    target.style.height = "inherit";
+
+    // Set the new height based on content
+    const newHeight = target.scrollHeight;
+    target.style.height = `${newHeight}px`;
+  };
+
+  const handleKeyDown = (e) => {
+    // Submit on Enter, but allow Shift+Enter for new lines
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      if (message.trim()) {
+        console.log("Sending:", message);
+        setMessage("");
+        // Reset height back to original after sending
+        if (textareaRef.current) textareaRef.current.style.height = "inherit";
+      }
     }
-  }, [message]);
 
-  const [expanded, setExpanded] = useState(false);
-
-  const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
+  };
   return (
     <section className="flex h-screen overflow-hidden bg-white ">
       <aside
-        className={`bg-gray-100 flex flex-col  border-indigo-400 border-l text-center ${expanded ? "w-72" : "w-13"} `}
+        className={`dark:bg-[#171717] flex flex-col bg-white border-zinc-100 transition-all duration-300 gap-2 border-r text-center ${expanded ? "w-72 " : "w-13"} `}
       >
         <div
           onClick={() => setExpanded(!expanded)}
           className="h-20 flex items-center text-center "
         >
-          <button className="icon-container mb-6 px-3">
+          <button className="icon-container mb-4 px-3">
             <IoChatbubbleEllipsesOutline className="icon-default text-2xl " />
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -66,7 +67,7 @@ const Header = () => {
               height="20"
               aria-hidden="true"
               data-rtl-flip=""
-              className=" text-4xl bg-red-500  mx-2"
+              className=" text-4xl bg-500  mx-2"
             >
               <use
                 href="/cdn/assets/sprites-core-mxwopdm6.svg#38e54b"
@@ -76,13 +77,13 @@ const Header = () => {
             <FiSidebar className="icon-hover text-2xl" />
           </button>
           <button
-            className={`ml-auto mr-9 mb-4 transition-opacity ${expanded ? "opacity-70" : "opacity-0 hidden"}`}
+            className={`ml-auto mr-9 transition-opacity ${expanded ? "opacity-70" : "opacity-0 hidden"}`}
           >
             <FiSidebar className="text-xl text-neutral-500" />
           </button>
         </div>
 
-        <nav className="flex-1 px-3 space-y-2 mt-4">
+        <nav className="flex-1 px-1.5 space-y-2  ">
           <NavItem
             icon={<LuNotebookPen />}
             label="New chat"
@@ -127,7 +128,7 @@ const Header = () => {
       </aside>
 
       <main className="flex flex-col flex-1 ">
-        <header className="h-20  flex justify-between  p-4 bg-white ">
+        <header className="h-20  flex justify-between p-4 bg-white ">
           <div className="mb-20">
             <select
               id="options"
@@ -138,7 +139,7 @@ const Header = () => {
             </select>
           </div>
 
-          <button className="bg-indigo-50 text-indigo-400 mr-17 font-semibold items-center mb-4 flex px-5   rounded-full text-center ">
+          <button className="bg-indigo-50 text-indigo-400 mr-17 font-semibold items-center mb-4 flex px-5 rounded-full text-center ">
             <LuGift />
             Claim offer
           </button>
@@ -149,7 +150,7 @@ const Header = () => {
           </div>
         </header>
 
-        <div className="flex flex-col justify-center items-center  w-full max-w-3xl mx-auto p-4">
+        <div className="flex flex-col justify-center items-center w-full max-w-3xl mx-auto p-4">
           <h2 className="font-normal text-4xl mt-20 ">
             What are you working on?
           </h2>
@@ -159,40 +160,39 @@ const Header = () => {
               <HiPlus className="text-xl" />
             </button>
 
-            {/* Text Input */}
             <textarea
               ref={textareaRef}
               rows={1}
               value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              placeholder="Ask Anything..."
-              className="flex-1 max-h-60 resize-none overflow-y-auto bg-transparent border-none focus:ring-0 text-gray-800 dark:text-zinc-100 py-2 px-2 placeholder-gray-500"
+              onChange={handleInput}
+              onKeyDown={handleKeyDown}
+              placeholder="Message ChatGPT"
+              style={{ minHeight: "44px" }} // Ensures it starts at a nice height
+              className="flex-1 max-h-50 resize-none outline-none bg-transparent border-none focus:ring-0 text-gray-800 text-[16px] leading-6 dark:outline  dark:text-zinc-100 py-2.5 px-3 placeholder-gray-600 overflow-y-auto"
             />
-
             {/* Send Button */}
             <div className="flex justify-center ml-2 gap-1">
               <button
                 disabled={!message.trim()}
-                className={`p-2 rounded-full items-center hover:bg-gray-100 transition-all ${
+                className={`px-3 py-2 rounded-full items-center hover:bg-gray-100 transition-all   ${
                   message.trim()
-                    ? " text-gray-800 dark:bg-white  dark:text-black cursor-pointer" 
+                    ? " text-gray-800 dark:bg-white  dark:text-black cursor-pointer"
                     : " text-gray-800  dark:bg-zinc-800 dark:text-zinc-600 cursor-pointer "
                 }`}
               >
-                <FaMicrophone className="text-xl font-bold" />
-            
+                <FaMicrophone className="text-xl " />
               </button>
+
               {/* THE ANIMATION WAVE*/}
               <button
-                onSubmit={!message.trim()}
-                className={`px-2 py-1 rounded-full hover:bg-black/80 transition-all ${
+                disabled={!message.trim()}
+                className={`px-3 py-2 rounded-full hover:bg-black/80 transition-all ${
                   message.trim()
-                    ? " bg-black text-white dark:bg-white dark:text-black cursor-pointer"  
+                    ? " bg-black text-white dark:bg-white dark:text-black cursor-pointer"
                     : "bg-black/90 text-white dark:bg-zinc-800 dark:text-zinc-600 cursor-pointer"
                 }`}
               >
-                <PiWaveformBold className="text-xl font-bold" /> 
-    
+                <PiWaveformBold className="text-xl font-bold" />
               </button>
             </div>
           </div>
@@ -209,10 +209,10 @@ const Header = () => {
 function NavItem({ icon, label, active, expanded }) {
   return (
     <button
-      className={`w-full flex items-center rounded-2xl transition-all ${active ? "text-neutral-900 " : "text-purple-200 bg-indigo-50"}`}
+      className={`w-full flex items-center px-3 py-2 rounded-xl cursor-pointer duration-200 group transition-all ${active ? "hover:bg-gray-200  text-neutral-900" : "text-neutral-800 "}`}
     >
       <span
-        className={`text-xl hover:bg-neutral-300 hover:p-2 rounded-lg ${!expanded && "mx-auto"}`}
+        className={`text-xl rounded-lg ${expanded ? " text-gray-800 items-center" : "text-neutral-800"}`}
       >
         {icon}
       </span>
