@@ -53,7 +53,7 @@ const Header = () => {
   return (
     <section className="flex h-screen overflow-hidden bg-white ">
       <aside
-        className={`dark:bg-[#171717] flex flex-col bg-white border-zinc-100 transition-all duration-300 gap-2 border-r text-center ${expanded ? "w-72 " : "w-13"} `}
+        className={`dark:bg-[#171717] flex flex-col bg-white border-slate-200 transition-all duration-300 border-r text-center ${expanded ? "w-72 " : "w-13"} `}
       >
         <div
           onClick={() => setExpanded(!expanded)}
@@ -83,7 +83,7 @@ const Header = () => {
           </button>
         </div>
 
-        <nav className="flex-1 px-1.5 space-y-2  ">
+        <nav className="flex-1 px-1.5 -mt-4 space-y-2  ">
           <NavItem
             icon={<LuNotebookPen />}
             label="New chat"
@@ -209,7 +209,7 @@ const Header = () => {
 function NavItem({ icon, label, active, expanded }) {
   return (
     <button
-      className={`w-full flex items-center px-3 py-2 rounded-xl cursor-pointer duration-200 group transition-all ${active ? "hover:bg-gray-200  text-neutral-900" : "text-neutral-800 "}`}
+      className={`w-full flex items-center  px-3 py-2 rounded-xl cursor-pointer duration-200 group transition-all ${active ? "hover:bg-gray-200  text-neutral-900" : "text-neutral-800 "}`}
     >
       <span
         className={`text-xl rounded-lg ${expanded ? " text-gray-800 items-center" : "text-neutral-800"}`}
