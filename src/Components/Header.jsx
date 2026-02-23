@@ -83,7 +83,7 @@ const Header = () => {
           </button>
         </div>
 
-        <nav className="flex-1 px-1.5 -mt-4 space-y-2  ">
+        <nav className="flex-1 px-1.5 mb-2 -mt-4 space-y-2  ">
           <NavItem
             icon={<LuNotebookPen />}
             label="New chat"
