@@ -11,6 +11,8 @@ import { GrAppsRounded } from "react-icons/gr";
 import { BsFolderPlus } from "react-icons/bs";
 import { TbCircleChevronRight } from "react-icons/tb";
 import { LuGift } from "react-icons/lu";
+import { PiStarFourLight } from "react-icons/pi";
+
 import { FiUserPlus } from "react-icons/fi";
 import { RiStarSLine } from "react-icons/ri";
 
@@ -129,11 +131,17 @@ const Header = () => {
         </nav>
 
         <NavItem
-          icon={<RiStarSLine/> }
-          label="Projects"
+          icon={<PiStarFourLight className="font-bold" />}
+          label="Upgrade"
           active
           expanded={expanded}
         />
+
+        <div className="text-center ml-3.5">
+          <h2 className="text-white items-center font-semibold rounded-full text-center bg-blue-600 h-6 w-6">
+            TF
+          </h2>
+        </div>
       </aside>
 
       <main className="flex flex-col flex-1 ">
