@@ -161,17 +161,17 @@ const Header = () => {
             Claim offer
           </button>
 
-          <div className="flex space-x-3 mr-6 ">
+          <div className="flex space-x-3 mb-5">
             <NavItem
               icon={<RiUserAddLine />}
-              label="Projects"
+              label="start a group chat"
               active
               expanded={expanded}
             />
 
             <NavItem
               icon={<TbCircleDotted />}
-              label="Projects"
+              label=" Turn on tempoary chat"
               active
               expanded={expanded}
             />
