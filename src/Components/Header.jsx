@@ -223,10 +223,6 @@ const Header = () => {
   );
 };
 
-function NavItem({ icon, label, active, expanded }) {
-  return (
-  
-  );
-}
+
 
 export default Header;
