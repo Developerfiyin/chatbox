@@ -234,6 +234,67 @@ const Header = () => {
   );
 };
 
+function ChatItem({ icon, label, active, expanded }) {
+  return (
+    <div className="relative flex items-center group mb-1">
+      <button
+        className={`
+          flex items-center transition-all duration-200 cursor-pointer outline-none border-none
+          
+          /* 1. DEFAULT STATE: Always transparent until hover */
+          bg-transparent 
+          
+          /* 2. HOVER STATE: Only shows background on hover */
+          ${
+            expanded
+              ? "w-full px-3 py-2 rounded-xl justify-start hover:bg-gray-100"
+              : "w-10 h-10 rounded-xl justify-center mx-auto hover:bg-gray-200"
+          }
+
+          /* 3. ACTIVE STATE: Keep this only if you want the 'selected' item to stay gray */
+          ${active ? "bg-gray-200 text-neutral-900" : "text-neutral-800"}
+        `}
+      >
+        {/* ICON */}
+        <span
+          className={`text-xl shrink-0 flex items-center justify-center ${expanded ? "mr-2" : ""}`}
+        >
+          {icon}
+        </span>
+
+        {/* INLINE LABEL */}
+        <span
+          className={`overflow-hidden whitespace-nowrap transition-all duration-300 font-medium ${
+            expanded ? "w-auto opacity-100" : "w-0 opacity-0"
+          }`}
+        >
+          {label}
+        </span>
+      </button>
+
+      {/* 4. TOOLTIP: Only shows when hovering while collapsed */}
+      {!expanded && (
+        <div
+          className="
+          absolute left-full ml-4 px-3 py-1.5
+          bg-zinc-900 text-white text-xs rounded-lg
+          whitespace-nowrap pointer-events-none
+          invisible opacity-0 -translate-y-2
+          group-hover:visible group-hover:opacity-100 group-hover:translate-y-0
+          transition-all duration-200 z-100 shadow-xl
+        "
+        >
+          {label}
+          {/* Small Arrow */}
+          <div className="absolute top-1/2 -left-1 -translate-y-1/2 w-2 h-2 bg-zinc-900 rotate-45" />
+        </div>
+      )}
+    </div>
+  );
+}
+
+
+
 function NavItem({ icon, label, active, expanded }) {
   return (
     <div className="relative flex items-center group mb-1">
