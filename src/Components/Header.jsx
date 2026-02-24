@@ -57,11 +57,11 @@ const Header = () => {
   return (
     <section className="flex h-screen overflow-hidden bg-white ">
       <aside
-        className={`dark:bg-[#171717] flex flex-col bg-white border-slate-200 transition-all duration-300 border-r text-center ${expanded ? "w-72 " : "w-13"} `}
+        className={`dark:bg-[#171717] flex flex-col  border-slate-200 transition-all duration-300 border-r text-center ${expanded ? "w-72 " : "w-13"} `}
       >
         <div
           onClick={() => setExpanded(!expanded)}
-          className="h-20 flex items-center group text-center "
+          className="h-20 flex items-center text-center "
         >
           <button className="icon-container mb-4 px-3">
             <IoChatbubbleEllipsesOutline className="icon-default text-2xl " />
