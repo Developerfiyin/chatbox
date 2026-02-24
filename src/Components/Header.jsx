@@ -12,6 +12,8 @@ import { BsFolderPlus } from "react-icons/bs";
 import { TbCircleChevronRight } from "react-icons/tb";
 import { LuGift } from "react-icons/lu";
 import { FiUserPlus } from "react-icons/fi";
+import { RiStarSLine } from "react-icons/ri";
+
 import { RiUserAddLine } from "react-icons/ri";
 import { TbCircleDotted } from "react-icons/tb";
 import { useRef, useEffect } from "react";
@@ -125,6 +127,13 @@ const Header = () => {
             expanded={expanded}
           />
         </nav>
+
+        <NavItem
+          icon={<RiStarSLine/> }
+          label="Projects"
+          active
+          expanded={expanded}
+        />
       </aside>
 
       <main className="flex flex-col flex-1 ">
