@@ -226,16 +226,17 @@ const Header = () => {
 function NavItem({ icon, label, active, expanded }) {
   return (
     <button
-      className={`w-full flex items-center  px-3 py-2 rounded-xl cursor-pointer duration-200 group transition-all ${active ? "hover:bg-gray-200  text-neutral-900" : "text-neutral-800 "}`}
+      className={`w-full flex items-center px-3 py-2 rounded-xl cursor-pointer duration-200 group transition-all ${active ? "hover:bg-gray-200  text-neutral-900" : "text-neutral-800 "}`}
     >
       <span
-        className={`text-xl rounded-lg ${expanded ? " text-gray-800 items-center" : "text-neutral-800"}`}
+        className={`text-xl transition-colors rounded-lg ${expanded ? " text-gray-800 items-center" : "text-neutral-800"}`}
       >
         {icon}
       </span>
 
       <span
-        className={`ml-2 overflow-hidden text-nowrap transition-all ${expanded ? "w-auto opacity-90" : "w-0 opacity-0"}`}
+        className={`ml-2 overflow-hidden group-hover:visible group-hover:opacity-100 group-hover:translate-x-0
+           text-nowrap transition-all ${expanded ? "w-auto opacity-90" : "w-0 opacity-0"}`}
       >
         {label}
       </span>
