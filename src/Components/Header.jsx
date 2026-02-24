@@ -240,7 +240,7 @@ function NavItem({ icon, label, active, expanded }) {
           }
 
           /* 3. ACTIVE STATE: Keep this only if you want the 'selected' item to stay gray */
-          ${active ? "bg-gray-200! text-neutral-900" : "text-neutral-800"}
+          ${active ? "bg-gray-200 text-neutral-900" : "text-neutral-800"}
         `}
       >
         {/* ICON */}
