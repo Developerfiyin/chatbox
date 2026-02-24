@@ -295,4 +295,62 @@ function NavItem({ icon, label, active, expanded }) {
   );
 }
 
+
+
+
+function ChatItem({ icon, label, active, expanded }) {
+  return (
+    <div className="relative flex flex-col items-center group">
+      
+      <button
+        className={`
+          flex items-center transition-all duration-200 cursor-pointer outline-none border-none
+          bg-transparent
+          ${expanded 
+            ? "w-full px-3 py-2 rounded-xl justify-start hover:bg-gray-100" 
+            : "w-10 h-10 rounded-xl justify-center hover:bg-gray-200"
+          }
+          ${active ? "bg-gray-200 text-neutral-900" : "text-neutral-800"}
+        `}
+      >
+        <span className="text-xl flex-shrink-0 flex items-center justify-center">
+          {icon}
+        </span>
+
+        {expanded && (
+          <span className="ml-3 overflow-hidden whitespace-nowrap transition-all duration-300 font-medium text-sm">
+            {label}
+          </span>
+        )}
+      </button>
+
+      {/* TOOLTIP: Positioned Below the icon */}
+      {!expanded && (
+        <div className="
+          /* Positioning: top-full moves it below. 
+             left-1/2 + -translate-x-1/2 centers it horizontally */
+          absolute top-full mt-2 left-1/2 -translate-x-1/2
+          
+          px-2.5 py-1.5 bg-zinc-800 text-white text-[11px] rounded-md
+          whitespace-nowrap pointer-events-none shadow-xl
+          
+          /* Animation: Slide down from the icon */
+          invisible opacity-0 -translate-y-1
+          group-hover:visible group-hover:opacity-100 group-hover:translate-y-0
+          transition-all duration-200 z-[100]
+        ">
+          {label}
+          
+          {/* Tooltip Arrow (pointing up) */}
+          <div className="
+            absolute -top-1 left-1/2 -translate-x-1/2 
+            border-x-[6px] border-x-transparent 
+            border-b-[6px] border-b-zinc-800
+          " />
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default Header;
