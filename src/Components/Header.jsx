@@ -162,14 +162,14 @@ const Header = () => {
           </button>
 
           <div className="flex space-x-3 mb-5">
-            <NavItem
+            <ChatItem
               icon={<RiUserAddLine />}
               label="start a group chat"
               active
               expanded={expanded}
             />
 
-            <NavItem
+            <ChatItem
               icon={<TbCircleDotted />}
               label=" Turn on tempoary chat"
               active
@@ -276,12 +276,7 @@ function ChatItem({ icon, label, active, expanded }) {
       {!expanded && (
         <div
           className="
-          absolute left-full ml-4 px-3 py-1.5
-          bg-zinc-900 text-white text-xs rounded-lg
-          whitespace-nowrap pointer-events-none
-          invisible opacity-0 -translate-y-2
-          group-hover:visible group-hover:opacity-100 group-hover:translate-y-0
-          transition-all duration-200 z-100 shadow-xl
+  
         "
         >
           {label}
