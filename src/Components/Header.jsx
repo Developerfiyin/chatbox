@@ -61,7 +61,7 @@ const Header = () => {
       >
         <div
           onClick={() => setExpanded(!expanded)}
-          className="h-20 flex items-center text-center "
+          className="h-20 flex items-center group text-center "
         >
           <button className="icon-container mb-4 px-3">
             <IoChatbubbleEllipsesOutline className="icon-default text-2xl " />
@@ -138,7 +138,7 @@ const Header = () => {
         />
 
         <div className="text-center ml-3.5">
-          <h2 className="text-white items-center font-semibold rounded-full text-center bg-blue-600 h-6 w-6">
+          <h2 className="text-white items-center font-medium rounded-full text-center bg-blue-600 h-6 w-6">
             TF
           </h2>
         </div>
