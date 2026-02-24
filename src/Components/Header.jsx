@@ -276,7 +276,17 @@ function ChatItem({ icon, label, active, expanded }) {
       {!expanded && (
         <div
           className="
-  
+  /* Positioning: Bottom-full moves it above the parent. 
+             left-1/2 + -translate-x-1/2 centers it horizontally */
+          absolute bottom-full mb-2 left-1/2 -translate-x-1/2
+          
+          px-2 py-1 bg-zinc-800 text-white text-[11px] rounded-md
+          whitespace-nowrap pointer-events-none
+          
+          /* Animation: Slide up from the icon */
+          invisible opacity-0 translate-y-1
+          group-hover:visible group-hover:opacity-100 group-hover:translate-y-0
+          transition-all duration-150 z-[100] shadow-lg
         "
         >
           {label}
@@ -287,8 +297,6 @@ function ChatItem({ icon, label, active, expanded }) {
     </div>
   );
 }
-
-
 
 function NavItem({ icon, label, active, expanded }) {
   return (
