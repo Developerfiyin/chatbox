@@ -139,7 +139,7 @@ const Header = () => {
             </select>
           </div>
 
-          <button className="bg-indigo-50 text-indigo-400 mr-17 font-semibold items-center mb-4 flex px-3 rounded-full text-center ">
+          <button className="bg-indigo-50 text-indigo-500 hover:bg-indigo-100 mr-17 font-semibold items-center mb-4 flex px-4 rounded-full text-center ">
             <LuGift />
             Claim offer
           </button>
