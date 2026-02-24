@@ -154,7 +154,7 @@ const Header = () => {
           <h2 className="font-normal text-4xl mt-20 ">
             What are you working on?
           </h2>
-          <div className="relative flex mt-10 w-full bg-white dark:bg-[#2f2f2f] border-gray-200 rounded-full border dark:border-gray-800 shadow-md transition-all px-3 py-3">
+          <div className="relative flex mt-12 w-full bg-white dark:bg-[#2f2f2f] border-gray-200 rounded-full border dark:border-gray-800 shadow-md transition-all px-3 py-3">
             {/* Attachment Icon */}
             <button className="p-2 text-gray-500 hover:bg-gray-100 dark:hover:bg-zinc-800 rounded-lg transition-colors">
               <HiPlus className="text-xl" />
@@ -168,7 +168,7 @@ const Header = () => {
               onKeyDown={handleKeyDown}
               placeholder="Message ChatGPT"
               style={{ minHeight: "44px" }} // Ensures it starts at a nice height
-              className="flex-1 max-h-50 resize-none outline-none bg-transparent border-none focus:ring-0 text-gray-800 text-[16px] leading-6 dark:outline  dark:text-zinc-100 py-2.5 px-3 placeholder-gray-600 overflow-y-auto"
+              className="flex-1 max-h-50 resize-none outline-none bg-transparent border-none focus:ring-0 text-gray-800 text-[16px] leading-6 dark:outline dark:text-zinc-100 py-2.5 px-3 placeholder-gray-600 overflow-y-auto"
             />
             {/* Send Button */}
             <div className="flex justify-center ml-2 gap-1">
