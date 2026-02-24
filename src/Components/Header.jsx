@@ -169,8 +169,12 @@ const Header = () => {
               expanded={expanded}
             />
 
-
-            <TbCircleDotted size={23} />
+            <NavItem
+              icon={<TbCircleDotted />}
+              label="Projects"
+              active
+              expanded={expanded}
+            />
           </div>
         </header>
 
