@@ -223,8 +223,63 @@ const Header = () => {
   );
 };
 
+function NavItem({ icon, label, active, expanded }) {
+  return (
+    <div className="relative flex items-center group mb-1">
+      <button
+        className={`
+          flex items-center transition-all duration-200 cursor-pointer outline-none border-none
+          /* 1. Shape & Width Logic */
+          ${
+            expanded
+              ? "w-full px-3 py-2 rounded-xl justify-start"
+              : "w-10 h-10 rounded-xl justify-center mx-auto"
+          }
+          /* 2. Hover & Active Colors */
+          ${
+            active
+              ? "bg-gray-200 text-neutral-900"
+              : expanded
+                ? "text-neutral-800 hover:bg-zinc-100" // Light gray for expanded row
+                : "text-neutral-800 hover:bg-gray-200" // Gray square for collapsed
+          }
+        `}
+      >
+        {/* ICON */}
+        <span className={`text-xl shrink-0 ${expanded ? "mr-2" : ""}`}>
+          {icon}
+        </span>
 
+        {/* INLINE LABEL (Visible only when expanded) */}
+        <span
+          className={`overflow-hidden whitespace-nowrap transition-all duration-300 ${
+            expanded ? "w-auto opacity-100" : "w-0 opacity-0"
+          }`}
+        >
+          {label}
+        </span>
+      </button>
 
-
+      {/* 3. HOVER LABEL (Tooltip - Visible only when NOT expanded) */}
+      {!expanded && (
+        <div
+          className="
+          absolute left-full ml-4 px-2 py-1
+          bg-zinc-900 text-white text-xs rounded-md
+          whitespace-nowrap pointer-events-none
+          
+          invisible opacity-0 -translate-x-2
+          group-hover:visible group-hover:opacity-100 group-hover:translate-x-0
+          transition-all duration-200 z-100 shadow-md
+        "
+        >
+          {label}
+          {/* Tooltip Arrow */}
+          <div className="absolute top-1/2 -left-1 -translate-y-1/2 w-2 h-2 bg-zinc-900 rotate-45" />
+        </div>
+      )}
+    </div>
+  );
+}
 
 export default Header;
