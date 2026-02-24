@@ -313,7 +313,7 @@ function ChatItem({ icon, label, active, expanded }) {
           ${active ? "bg-gray-200 text-neutral-900" : "text-neutral-800"}
         `}
       >
-        <span className="text-xl flex-shrink-0 flex items-center justify-center">
+        <span className="text-xl shrink-0 flex items-center justify-center">
           {icon}
         </span>
 
@@ -337,7 +337,7 @@ function ChatItem({ icon, label, active, expanded }) {
           /* Animation: Slide down from the icon */
           invisible opacity-0 -translate-y-1
           group-hover:visible group-hover:opacity-100 group-hover:translate-y-0
-          transition-all duration-200 z-[100]
+          transition-all duration-200 z-100
         ">
           {label}
           
