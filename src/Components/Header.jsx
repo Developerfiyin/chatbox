@@ -12,14 +12,10 @@ import { BsFolderPlus } from "react-icons/bs";
 import { TbCircleChevronRight } from "react-icons/tb";
 import { LuGift } from "react-icons/lu";
 import { PiStarFourLight } from "react-icons/pi";
-
-import { FiUserPlus } from "react-icons/fi";
-import { RiStarSLine } from "react-icons/ri";
-
 import { RiUserAddLine } from "react-icons/ri";
 import { TbCircleDotted } from "react-icons/tb";
-import { useRef, useEffect } from "react";
-import { HiPlus, HiArrowUp } from "react-icons/hi2";
+import { useRef} from "react";
+import { HiPlus, HiAr } from "react-icons/hi2";
 import { FiSidebar } from "react-icons/fi";
 import "./index.css";
 import { useState } from "react";
@@ -161,7 +157,7 @@ const Header = () => {
             Claim offer
           </button>
 
-          <div className="flex space-x-3 mb-5">
+          <div className="flex space-x-3 mb-5 mr-9">
             <ChatItem
               icon={<RiUserAddLine />}
               label="start a group chat"
