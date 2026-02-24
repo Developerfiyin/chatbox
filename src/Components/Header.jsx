@@ -144,7 +144,7 @@ const Header = () => {
             Claim offer
           </button>
 
-          <div className="flex space-x-4 mr-6 ">
+          <div className="flex space-x-3 mr-6 ">
             <RiUserAddLine size={23} />
             <TbCircleDotted size={23} />
           </div>
