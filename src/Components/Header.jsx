@@ -203,7 +203,6 @@ const Header = () => {
             {/* Send Button */}
             <div className="flex justify-center ml-2 gap-1">
               <button
-                disabled={!message.trim()}
                 className={`px-3 py-2 rounded-full items-center hover:bg-gray-100 transition-all   ${
                   message.trim()
                     ? " text-gray-800 dark:bg-white  dark:text-black cursor-pointer"
@@ -236,7 +235,7 @@ const Header = () => {
   );
 };
 
-function NavItem({ icon, label, active, expanded }) {
+function NavItem({ icon, label, active, disabled, expanded }) {
   return (
     <div className="relative flex items-center group mb-1">
       <button
@@ -313,12 +312,13 @@ function ChatItem({ icon, label, active, expanded }) {
         <span className="text-xl shrink-0 flex items-center justify-center">
           {icon}
         </span>
-
         {expanded && (
           <span className="ml-3 overflow-hidden whitespace-nowrap transition-all duration-300 font-medium text-sm">
             {label}
+            disabled={!message.trim()}
           </span>
         )}
+        <span disabled={!message.trim()}></span>
       </button>
 
       {/* TOOLTIP: Positioned Below the icon */}
@@ -327,7 +327,7 @@ function ChatItem({ icon, label, active, expanded }) {
           className="
           /* Positioning:  moves it below. 
              left-1/2 + -translate-x-1/2 centers it horizontally */
-          absolute top-full mt-2 left-1/2 -translate-x-1/2
+          absolute top-full mt-2 
           
           px-2.5 py-2 bg-black  text-white text-[11px] rounded-md
           whitespace-nowrap pointer-events-none shadow-xl
