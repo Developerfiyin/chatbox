@@ -1,4 +1,6 @@
 import React from "react";
+import { useState } from "react";
+
 import { FaRocketchat } from "react-icons/fa";
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 import { LuNotebookPen } from "react-icons/lu";
@@ -14,11 +16,10 @@ import { LuGift } from "react-icons/lu";
 import { PiStarFourLight } from "react-icons/pi";
 import { RiUserAddLine } from "react-icons/ri";
 import { TbCircleDotted } from "react-icons/tb";
-import { useRef} from "react";
-import { HiPlus, HiAr } from "react-icons/hi2";
+import { useRef } from "react";
+import { HiPlus } from "react-icons/hi2";
 import { FiSidebar } from "react-icons/fi";
 import "./index.css";
-import { useState } from "react";
 const Header = () => {
   const [expanded, setExpanded] = useState(false);
 
@@ -67,6 +68,7 @@ const Header = () => {
               height="20"
               aria-hidden="true"
               data-rtl-flip=""
+              size={20}
               className=" text-4xl bg-500  mx-2"
             >
               <use
@@ -133,7 +135,7 @@ const Header = () => {
           expanded={expanded}
         />
 
-        <div className="text-center ml-3.5">
+        <div className="text-center ml-3.5 mb-5">
           <h2 className="text-white items-center font-medium rounded-full text-center bg-blue-600 h-6 w-6">
             TF
           </h2>
@@ -230,8 +232,6 @@ const Header = () => {
   );
 };
 
-
-
 function NavItem({ icon, label, active, expanded }) {
   return (
     <div className="relative flex items-center group mb-1">
@@ -291,20 +291,17 @@ function NavItem({ icon, label, active, expanded }) {
   );
 }
 
-
-
-
 function ChatItem({ icon, label, active, expanded }) {
   return (
     <div className="relative flex flex-col items-center group">
-      
       <button
         className={`
           flex items-center transition-all duration-200 cursor-pointer outline-none border-none
           bg-transparent
-          ${expanded 
-            ? "w-full px-3 py-2 rounded-xl justify-start hover:bg-gray-100" 
-            : "w-10 h-10 rounded-xl justify-center hover:bg-gray-200"
+          ${
+            expanded
+              ? "w-full px-3 py-2 rounded-xl justify-start hover:bg-gray-100"
+              : "w-10 h-10 rounded-xl justify-center hover:bg-gray-200"
           }
           ${active ? "bg-gray-200 text-neutral-900" : "text-neutral-800"}
         `}
@@ -322,7 +319,8 @@ function ChatItem({ icon, label, active, expanded }) {
 
       {/* TOOLTIP: Positioned Below the icon */}
       {!expanded && (
-        <div className="
+        <div
+          className="
           /* Positioning: top-full moves it below. 
              left-1/2 + -translate-x-1/2 centers it horizontally */
           absolute top-full mt-2 left-1/2 -translate-x-1/2
@@ -334,15 +332,18 @@ function ChatItem({ icon, label, active, expanded }) {
           invisible opacity-0 -translate-y-1
           group-hover:visible group-hover:opacity-100 group-hover:translate-y-0
           transition-all duration-200 z-100
-        ">
+        "
+        >
           {label}
-          
+
           {/* Tooltip Arrow (pointing up) */}
-          <div className="
+          <div
+            className="
             absolute -top-1 left-1/2 -translate-x-1/2 
             border-x-[6px] border-x-transparent 
             border-b-[6px] border-b-zinc-800
-          " />
+          "
+          />
         </div>
       )}
     </div>
