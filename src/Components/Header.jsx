@@ -209,7 +209,7 @@ const Header = () => {
                     : " text-gray-800  dark:bg-zinc-800 dark:text-zinc-600 cursor-pointer "
                 }`}
               >
-                <FaMicrophone className="text-xl " />
+                <FaMicrophone className="text-xl" />
               </button>
 
               {/* THE ANIMATION WAVE*/}
@@ -235,7 +235,7 @@ const Header = () => {
   );
 };
 
-function NavItem({ icon, label, active, disabled, expanded }) {
+function NavItem({ icon, label, active, expanded }) {
   return (
     <div className="relative flex items-center group mb-1">
       <button
@@ -294,7 +294,7 @@ function NavItem({ icon, label, active, disabled, expanded }) {
   );
 }
 
-function ChatItem({ icon, label, active, expanded }) {
+function ChatItem({ icon, label, active, disabled, expanded }) {
   return (
     <div className="relative flex flex-col items-center group">
       <button
