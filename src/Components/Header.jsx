@@ -185,7 +185,7 @@ const Header = () => {
 
             <ChatItem
               icon={<HiPlus />}
-              label=" Add files and more /"
+              label=" Add files and more  / "
               active
               expanded={expanded}
             />
@@ -243,10 +243,10 @@ function NavItem({ icon, label, active, expanded }) {
         className={`
           flex items-center transition-all duration-200 cursor-pointer outline-none border-none
           
-        
+          /* 1. DEFAULT STATE: Always transparent until hover */
           bg-transparent 
           
-         /* 2. HOVER STATE: Only shows background on hover */
+          /* 2. HOVER STATE: Only shows background on hover */
           ${
             expanded
               ? "w-full px-3 py-2 rounded-xl justify-start hover:bg-gray-100"
@@ -325,17 +325,17 @@ function ChatItem({ icon, label, active, expanded }) {
       {!expanded && (
         <div
           className="
-          /* Positioning: top-full moves it below. 
+          /* Positioning:  moves it below. 
              left-1/2 + -translate-x-1/2 centers it horizontally */
           absolute top-full mt-2 left-1/2 -translate-x-1/2
           
-          px-2.5 py-1.5 bg-zinc-800 text-white text-[11px] rounded-md
+          px-2.5 py-2 bg-black  text-white text-[11px] rounded-md
           whitespace-nowrap pointer-events-none shadow-xl
           
           /* Animation: Slide down from the icon */
           invisible opacity-0 -translate-y-1
           group-hover:visible group-hover:opacity-100 group-hover:translate-y-0
-          transition-all duration-200 z-100
+          transition-all duration-200 z-100 font-bold
         "
         >
           {label}
