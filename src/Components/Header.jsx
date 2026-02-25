@@ -183,7 +183,12 @@ const Header = () => {
           <div className="relative flex mt-12 w-full bg-white dark:bg-[#2f2f2f] border-gray-200 rounded-full border dark:border-gray-800 shadow-md transition-all px-3 py-3">
             {/* Attachment Icon */}
             <button className="p-2 text-gray-500 hover:bg-gray-100 dark:hover:bg-zinc-800 rounded-lg transition-colors">
-              <HiPlus className="text-xl" />
+              <ChatItem
+              icon={<HiPlus  />}
+              label=" Turn on tempoary chat"
+              active
+              expanded={expanded}
+            />
             </button>
 
             <textarea
