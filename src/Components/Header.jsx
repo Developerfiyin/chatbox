@@ -237,10 +237,11 @@ function NavItem({ icon, label, active, expanded }) {
           flex items-center transition-all duration-200 cursor-pointer outline-none border-none
           
           /* 1.DEFAULT STATE: Always transparent until hover */
-          
+
           bg-transparent 
           
           /* 2.HOVER STATE: Only shows background on hover */
+          
           ${
             expanded
               ? "w-full px-3 py-2 rounded-xl justify-start hover:bg-gray-100"
