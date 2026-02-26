@@ -1,7 +1,5 @@
 import React from "react";
 import { useState } from "react";
-
-import { FaRocketchat } from "react-icons/fa";
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 import { LuNotebookPen } from "react-icons/lu";
 import { IoSearchOutline } from "react-icons/io5";
@@ -21,7 +19,6 @@ import { FiSidebar } from "react-icons/fi";
 import "./index.css";
 const Header = () => {
   const [expanded, setExpanded] = useState(false);
-
   const [message, setMessage] = useState("");
   const textareaRef = useRef(null);
 
