@@ -220,7 +220,7 @@ const Header = () => {
             </div>
           </div>
 
-          <p className="text-xs text-center text-gray-500 mt-3">
+          <p className="text-xs text-center text-gray-600 mt-3">
             ChatGPT can make mistakes. Check important info.
           </p>
         </div>
@@ -241,7 +241,7 @@ function NavItem({ icon, label, active, expanded }) {
           bg-transparent 
           
           /* 2.HOVER STATE: Only shows background on hover */
-          
+
           ${
             expanded
               ? "w-full px-3 py-2 rounded-xl justify-start hover:bg-gray-100"
