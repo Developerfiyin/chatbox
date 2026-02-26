@@ -45,7 +45,6 @@ const Header = () => {
       }
     }
 
-    const [isOpen, setIsOpen] = useState(false);
   };
   return (
     <section className="flex h-screen overflow-hidden bg-white ">
@@ -223,7 +222,7 @@ const Header = () => {
           </div>
 
           <p className="text-xs text-center text-gray-500 mt-3">
-            ChatGPT do make mistakes. Check important info.
+            ChatGPT can make mistakes. Check important info.
           </p>
         </div>
       </main>
@@ -238,10 +237,10 @@ function NavItem({ icon, label, active, expanded }) {
         className={`
           flex items-center transition-all duration-200 cursor-pointer outline-none border-none
           
-          /* 1. DEFAULT STATE: Always transparent until hover */
+          /* 1.DEFAULT STATE: Always transparent until hover */
           bg-transparent 
           
-          /* 2. HOVER STATE: Only shows background on hover */
+          /* 2.HOVER STATE: Only shows background on hover */
           ${
             expanded
               ? "w-full px-3 py-2 rounded-xl justify-start hover:bg-gray-100"
