@@ -237,6 +237,7 @@ function NavItem({ icon, label, active, expanded }) {
           flex items-center transition-all duration-200 cursor-pointer outline-none border-none
           
           /* 1.DEFAULT STATE: Always transparent until hover */
+          
           bg-transparent 
           
           /* 2.HOVER STATE: Only shows background on hover */
@@ -289,6 +290,7 @@ function NavItem({ icon, label, active, expanded }) {
 function ChatItem({ icon, label, active, expanded }) {
   return (
     <div className="relative flex flex-col items-center group">
+
       <button
         className={`
           flex items-center transition-all duration-200 cursor-pointer outline-none border-none
@@ -317,10 +319,12 @@ function ChatItem({ icon, label, active, expanded }) {
           className="
           /* Positioning:  moves it below. 
              left-1/2 + -translate-x-1/2 centers it horizontally */
+
           absolute top-full mt-2 
           px-2.5 py-2 bg-black  text-white text-[11px] rounded-md
           whitespace-nowrap pointer-events-none shadow-xl
           /* Animation: Slide down from the icon */
+
           invisible opacity-0 -translate-y-1
           group-hover:visible group-hover:opacity-100 group-hover:translate-y-0
           transition-all duration-200 z-100 font-bold
