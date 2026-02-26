@@ -7,7 +7,6 @@ import { LuNotebookPen } from "react-icons/lu";
 import { IoSearchOutline } from "react-icons/io5";
 import { FaMicrophone } from "react-icons/fa6";
 import { PiWaveformBold } from "react-icons/pi";
-import { FaArrowUp } from "react-icons/fa";
 import { PiImagesSquareBold } from "react-icons/pi";
 import { GrAppsRounded } from "react-icons/gr";
 import { BsFolderPlus } from "react-icons/bs";
@@ -227,7 +226,7 @@ const Header = () => {
           </div>
 
           <p className="text-xs text-center text-gray-500 mt-3">
-            ChatGPT can make mistakes. Check important info.
+            ChatGPT do make mistakes. Check important info.
           </p>
         </div>
       </main>
@@ -285,8 +284,7 @@ function NavItem({ icon, label, active, expanded }) {
           transition-all duration-200 z-100 shadow-xl
         "
         >
-          {label}
-          {/* Small Arrow */}
+          
           <div className="absolute top-1/2 -left-1 -translate-y-1/2 w-2 h-2 bg-zinc-900 rotate-45" />
         </div>
       )}
@@ -294,7 +292,7 @@ function NavItem({ icon, label, active, expanded }) {
   );
 }
 
-function ChatItem({ icon, label, active, disabled, expanded }) {
+function ChatItem({ icon, label, active, expanded }) {
   return (
     <div className="relative flex flex-col items-center group">
       <button
