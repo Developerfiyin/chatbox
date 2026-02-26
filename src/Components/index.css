@@ -1,18 +1,17 @@
 .icon-container {
-  /* the container has a defined size or flex properties */
   display: flex;
-  cursor: pointer; 
+  cursor: pointer;
   position: relative;
   text-align: center;
   align-items: center;
-  width: 24px; /* Adjusted size as needed */
-  height: 24px; /* Adjusted size as needed */
+  width: 24px;
+  height: 24px;
 }
 
 .icon-default,
 .icon-hover {
   position: absolute;
-  transition: opacity 0.3s ease-in-out; /* Smooth transition */
+  transition: opacity 0.3s ease-in-out;
 }
 
 .icon-hover {
