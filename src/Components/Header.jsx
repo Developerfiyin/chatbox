@@ -315,10 +315,8 @@ function ChatItem({ icon, label, active, disabled, expanded }) {
         {expanded && (
           <span className="ml-3 overflow-hidden whitespace-nowrap transition-all duration-300 font-medium text-sm">
             {label}
-            disabled={!message.trim()}
           </span>
         )}
-        <span disabled={!message.trim()}></span>
       </button>
 
       {/* TOOLTIP: Positioned Below the icon */}
